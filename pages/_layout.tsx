@@ -1,24 +1,20 @@
-import { ReactNode, useContext, useEffect } from 'react';
+import React, { ReactNode, useContext, useEffect } from 'react';
 // import Navbar from './Navbar';
 // import { Context as AppContext } from '../globalState/context/AppContext';
 import { CssBaseline } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from '../styles/theme/theme';
+import Navbar from '../src/components/layout/Navbar';
 
 function Layout({ children }: { children: ReactNode }) {
   return (
-    <ThemeProvider theme={theme(true)}>
+    <ThemeProvider theme={theme(false)}>
       <CssBaseline />
       <div
         style={{
           minHeight: '100vh',
-          boxSizing: 'border-box',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          border: '5px solid red',
         }}>
-        {/* <Navbar /> */}
+        <Navbar />
         {children}
       </div>
     </ThemeProvider>

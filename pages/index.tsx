@@ -17,10 +17,16 @@ const Home: NextPage = () => {
         <li>Jest</li>
         <li>Storybook</li>
         <li>------</li>
-        <li>Material Ui</li>
-        <li>Framer motion</li>
+        <li>
+          <s>Material Ui</s>
+        </li>
+        <li>
+          <s>Framer motion</s>
+        </li>
         <li>styled components ?</li>
-        <li>Page transition</li>
+        <li>
+          <s>Page transition</s>
+        </li>
       </ul>
     </AnimatedPage>
   );

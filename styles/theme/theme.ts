@@ -18,7 +18,7 @@ interface Palette {
 
 const lightPalette: Palette = {
   primary: {
-    main: '#556cd6',
+    main: '#1bf283',
   },
   secondary: {
     main: '#19857b',
@@ -33,7 +33,7 @@ const lightPalette: Palette = {
 
 const darkPalette: Palette = {
   primary: {
-    main: '#556cd6',
+    main: '#000000',
   },
   secondary: {
     main: '#19857b',
@@ -67,7 +67,7 @@ const theme = (dark: boolean): ThemeOptions => {
       },
     },
     typography: {
-      fontFamily: ['Urbanist', 'Sans-serif'].join(','),
+      fontFamily: 'Urbanist',
     },
   });
 };

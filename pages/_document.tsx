@@ -7,12 +7,12 @@ import { SimplePaletteColorOptions } from '@mui/material';
 
 export default class MyDocument extends Document {
   render() {
-    const myTheme = theme(true).palette?.primary as SimplePaletteColorOptions;
+    const myTheme = theme(false).palette?.primary as SimplePaletteColorOptions;
     return (
       <Html lang='fr'>
         <Head>
           <meta name='theme-color' content={myTheme.main} />
-          <link rel='preconnect' href='https://fonts.gstatic.com' />
+
           <link
             href='https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;700&display=swap'
             rel='stylesheet'

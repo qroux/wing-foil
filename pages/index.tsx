@@ -1,5 +1,7 @@
+import { Container } from '@mui/material';
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import React from 'react';
 import AnimatedPage from './_animatedPage';
 
 const Home: NextPage = () => {
@@ -11,23 +13,25 @@ const Home: NextPage = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <h1>TO DO</h1>
-      <ul>
-        <li>Cypress</li>
-        <li>Jest</li>
-        <li>Storybook</li>
-        <li>------</li>
-        <li>
-          <s>Material Ui</s>
-        </li>
-        <li>
-          <s>Framer motion</s>
-        </li>
-        <li>styled components ?</li>
-        <li>
-          <s>Page transition</s>
-        </li>
-      </ul>
+      <Container maxWidth='xl' style={{}}>
+        <h1>TO DO</h1>
+        <ul>
+          <li>Cypress</li>
+          <li>Jest</li>
+          <li>Storybook</li>
+          <li>------</li>
+          <li>
+            <s>Material Ui</s>
+          </li>
+          <li>
+            <s>Framer motion</s>
+          </li>
+          <li>styled components ?</li>
+          <li>
+            <s>Page transition</s>
+          </li>
+        </ul>
+      </Container>
     </AnimatedPage>
   );
 };

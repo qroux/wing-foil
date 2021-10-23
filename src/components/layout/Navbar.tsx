@@ -1,33 +1,56 @@
 import React from 'react';
+import CustomButton from '../atoms/Button';
+import { Container, Button } from '@mui/material';
 import Link from 'next/link';
-import Button from '../atoms/Button';
 
 type NavLink = {
   label: string;
   path: string;
 };
 
-const links: NavLink[] = [{ label: 'About', path: '/about' }];
+const links: NavLink[] = [
+  { label: 'About', path: '/about' },
+  { label: 'Sponsor', path: '/sponsor' },
+];
+
+export const NavHeight = '4rem';
 
 export default function Navbar() {
   const renderLinks = links.map((link, id) => {
-    return <Button label={link.label} path={link.path} size={4} key={id} />;
+    return (
+      <Link href={link.path} passHref>
+        <Button key={id} color='success'>
+          {link.label}
+        </Button>
+      </Link>
+    );
   });
 
   return (
     <div
       style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        height: '5rem',
-        padding: '0 2rem',
-        boxShadow: '0 4px 2px -2px rgba(0, 0, 0, 0.185)',
+        height: NavHeight,
+        // boxShadow: '0 4px 2px -2px rgba(0, 0, 0, 0.185)',
       }}>
-      <div className={'right'}>
-        <Button label={'logo'} path={'/'} size={2} />
-      </div>
-      <div className={'left'}>{renderLinks}</div>
+      <Container
+        maxWidth='xl'
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}>
+        <div className={'right'}>
+          <CustomButton label={'logo'} path={'/'} size={2} />
+        </div>
+        <div
+          className={'left'}
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+          }}>
+          {renderLinks}
+        </div>
+      </Container>
     </div>
   );
 }

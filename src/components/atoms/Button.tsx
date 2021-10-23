@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import Link from 'next/link';
 import { useTheme } from '@mui/material/styles';
+import { NavHeight } from '../layout/Navbar';
 
 type State = {
   label: string;
@@ -20,11 +21,18 @@ export default function Button({
       <div
         style={{
           cursor: 'pointer',
-          border: '1px solid',
-          borderColor: useTheme().palette.secondary.main,
-          height: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: NavHeight,
+          width: '5rem',
         }}>
-        <HtmlTag>{label}</HtmlTag>
+        <HtmlTag
+          style={{
+            margin: 0,
+          }}>
+          {label}
+        </HtmlTag>
       </div>
     </Link>
   );

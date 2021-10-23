@@ -20,7 +20,8 @@ export default function Button({
       <div
         style={{
           cursor: 'pointer',
-          border: '1px solid transparent',
+          border: '1px solid',
+          borderColor: useTheme().palette.secondary.main,
           height: '100%',
         }}>
         <HtmlTag>{label}</HtmlTag>

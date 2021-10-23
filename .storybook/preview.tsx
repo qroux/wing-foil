@@ -2,8 +2,10 @@ import React from 'react';
 import theme from '../styles/theme/theme';
 import { ThemeProvider } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
+import { useDarkMode } from 'storybook-dark-mode';
 
-const myTheme = theme(true);
+const darkTheme = theme(true);
+const lightTheme = theme(false);
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -13,11 +15,16 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  darkMode: {
+    stylePreview: true,
+    dark: { darkTheme },
+    light: { lightTheme },
+  },
 };
 
 export const decorators = [
   (Story) => (
-    <ThemeProvider theme={myTheme}>
+    <ThemeProvider theme={useDarkMode() ? darkTheme : lightTheme}>
       <CssBaseline />
       <Story />
     </ThemeProvider>

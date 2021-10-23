@@ -1,5 +1,5 @@
 import { createTheme, ThemeOptions } from '@mui/material/styles';
-import { red } from '@mui/material/colors';
+import { green, red, yellow } from '@mui/material/colors';
 
 interface Palette {
   primary: {
@@ -21,7 +21,7 @@ const lightPalette: Palette = {
     main: '#1bf283',
   },
   secondary: {
-    main: '#19857b',
+    main: yellow.A400,
   },
   error: {
     main: red.A400,
@@ -36,7 +36,7 @@ const darkPalette: Palette = {
     main: '#000000',
   },
   secondary: {
-    main: '#19857b',
+    main: green.A400,
   },
   error: {
     main: red.A400,

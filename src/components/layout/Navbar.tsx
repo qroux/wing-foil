@@ -1,7 +1,6 @@
 import React from 'react';
-import CustomButton from '../atoms/Button';
-import { Container, Button } from '@mui/material';
-import Link from 'next/link';
+import Button from '../atoms/Button';
+import { Container } from '@mui/material';
 
 type NavLink = {
   label: string;
@@ -17,19 +16,13 @@ export const NavHeight = '4rem';
 
 export default function Navbar() {
   const renderLinks = links.map((link, id) => {
-    return (
-      <Link href={link.path} passHref>
-        <Button key={id} color='success'>
-          {link.label}
-        </Button>
-      </Link>
-    );
+    return <Button label={link.label} path={link.path} size={4} key={id} />;
   });
 
   return (
     <div
       style={{
-        height: NavHeight,
+        backgroundColor: 'rgba(255,255,255, 0)',
         // boxShadow: '0 4px 2px -2px rgba(0, 0, 0, 0.185)',
       }}>
       <Container
@@ -38,9 +31,10 @@ export default function Navbar() {
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
+          height: NavHeight,
         }}>
         <div className={'right'}>
-          <CustomButton label={'logo'} path={'/'} size={2} />
+          <Button label={'logo'} path={'/'} size={2} />
         </div>
         <div
           className={'left'}

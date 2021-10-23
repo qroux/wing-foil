@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react';
 import Link from 'next/link';
 import { useTheme } from '@mui/material/styles';
 import { NavHeight } from '../layout/Navbar';
+import { motion } from 'framer-motion';
 
 type State = {
   label: string;
@@ -18,13 +19,18 @@ export default function Button({
 
   return (
     <Link href={path} passHref>
-      <div
+      <motion.div
+        initial={{
+          color: 'black',
+        }}
+        animate={{
+          color: 'red',
+        }}
         style={{
           cursor: 'pointer',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          height: NavHeight,
           width: '5rem',
         }}>
         <HtmlTag
@@ -33,7 +39,7 @@ export default function Button({
           }}>
           {label}
         </HtmlTag>
-      </div>
+      </motion.div>
     </Link>
   );
 }

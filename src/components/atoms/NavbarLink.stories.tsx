@@ -1,10 +1,10 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-import Button from './Button';
+import NavbarLink from './NavbarLink';
 
 export default {
-  title: 'components/atoms/Button',
-  component: Button,
+  title: 'components/atoms/NavbarLink',
+  component: NavbarLink,
   argTypes: {
     label: {
       name: 'label',
@@ -15,10 +15,10 @@ export default {
       defaultValue: null,
     },
   },
-} as ComponentMeta<typeof Button>;
+} as ComponentMeta<typeof NavbarLink>;
 
-const Template: ComponentStory<typeof Button> = (args: any) => {
-  return <Button {...args} />;
+const Template: ComponentStory<typeof NavbarLink> = (args: any) => {
+  return <NavbarLink {...args} />;
 };
 
 export const Default = Template.bind({});

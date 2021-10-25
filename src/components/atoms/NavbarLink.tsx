@@ -20,12 +20,6 @@ export default function Button({
   return (
     <Link href={path} passHref>
       <motion.div
-        initial={{
-          color: 'black',
-        }}
-        animate={{
-          color: 'red',
-        }}
         style={{
           cursor: 'pointer',
           display: 'flex',

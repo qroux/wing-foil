@@ -7,8 +7,10 @@ import theme from '../styles/theme/theme';
 import Navbar from '../src/components/layout/Navbar';
 
 function Layout({ children }: { children: ReactNode }) {
+  const LightTheme = theme(false);
+
   return (
-    <ThemeProvider theme={theme(false)}>
+    <ThemeProvider theme={LightTheme}>
       <CssBaseline />
       <div
         style={{

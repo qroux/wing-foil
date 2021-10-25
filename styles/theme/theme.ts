@@ -1,7 +1,16 @@
-import { createTheme, ThemeOptions } from '@mui/material/styles';
-import { green, red, yellow } from '@mui/material/colors';
+import {
+  createTheme,
+  PaletteColorOptions,
+  PaletteOptions,
+  SimplePaletteColorOptions,
+  Theme,
+} from '@mui/material/styles';
+import { green, orange, red, yellow } from '@mui/material/colors';
 
-interface Palette {
+// Palette from foil.png
+// https://coolors.co/30b7ce-dadde7-2b3b3f-91c263
+
+interface MyPalette {
   primary: {
     main: string;
   };
@@ -13,25 +22,39 @@ interface Palette {
   };
   text: {
     primary: string;
+    secondary: string;
+  };
+  background: {
+    paper: string;
+    default: string;
   };
 }
 
-const lightPalette: Palette = {
+const lightPalette: MyPalette = {
   primary: {
-    main: '#1bf283',
+    main: '#30b7ce',
   },
   secondary: {
-    main: yellow.A400,
+    // vert
+    // main: '#91C263',
+    // main: '#a0f252',
+    // orange
+    main: '#fc2d2d',
   },
   error: {
     main: red.A400,
   },
   text: {
-    primary: '#000b5c',
+    primary: '#2B3B3F',
+    secondary: '#F3F4F7',
+  },
+  background: {
+    default: '#DADDE7',
+    paper: '#DADDE7',
   },
 };
 
-const darkPalette: Palette = {
+const darkPalette: MyPalette = {
   primary: {
     main: '#000000',
   },
@@ -43,11 +66,16 @@ const darkPalette: Palette = {
   },
   text: {
     primary: '#d7dbfc',
+    secondary: '#ff0004',
+  },
+  background: {
+    default: '#ffffff',
+    paper: '#ffffff',
   },
 };
 
 // Create a theme instance.
-const theme = (dark: boolean): ThemeOptions => {
+const theme = (dark: boolean): Theme => {
   const palette = dark ? darkPalette : lightPalette;
 
   return createTheme({
@@ -64,6 +92,11 @@ const theme = (dark: boolean): ThemeOptions => {
       },
       text: {
         primary: palette.text.primary,
+        secondary: palette.text.secondary,
+      },
+      background: {
+        default: palette.background.default,
+        paper: palette.background.paper,
       },
     },
     typography: {

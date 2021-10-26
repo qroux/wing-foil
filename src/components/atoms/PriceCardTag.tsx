@@ -18,7 +18,7 @@ export default function PriceCardTag({
         backgroundColor: label && !outlined ? color : 'transparent',
         borderRadius: 5,
         color: outlined ? color : 'white',
-        fontWeight: 300,
+        fontWeight: 400,
         maxWidth: '7rem',
         display: 'flex',
         justifyContent: 'center',

@@ -70,7 +70,7 @@ export default function Navbar() {
               style={{
                 cursor: 'pointer',
               }}>
-              <HomeLogo fontSize='large' color='#ffffff' />
+              <HomeLogo fontSize='large' />
               {/* <Image src={logo} height={40} width={40} /> */}
             </div>
           </Link>

@@ -26,6 +26,7 @@ export default function PriceCard({ card }: { card: Card }) {
         backgroundColor: 'white',
         borderRadius: 5,
         width: '100%',
+        minHeight: '15rem',
         padding: '1rem 1rem',
       }}>
       <div className='card__tag' style={{}}>

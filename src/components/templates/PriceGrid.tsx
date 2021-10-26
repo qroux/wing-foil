@@ -13,6 +13,7 @@ export default function PriceGrid({ cards }: { cards: Card[] }) {
         display: 'grid',
         gridTemplateColumns: 'repeat(auto-fill, minmax(20rem, 1fr))',
         gridGap: '3rem',
+        gridRowGap: '1rem',
       }}>
       {renderCards}
     </div>

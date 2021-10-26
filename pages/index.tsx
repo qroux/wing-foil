@@ -42,7 +42,7 @@ const Home: NextPage = () => {
           objectFit: 'cover',
           zIndex: -1,
           width: '100%',
-          height: absolute ? '100vh' : `calc(100vh - ${NavHeight})`,
+          // height: absolute ? '100vh' : `calc(100vh - ${NavHeight})`,
         }}>
         <source src='/foil.mp4' type='video/mp4' />
       </VideoContainer>

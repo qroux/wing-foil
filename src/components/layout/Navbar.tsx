@@ -15,7 +15,7 @@ type NavLink = {
 const links: NavLink[] = [
   { label: 'About', path: '/about' },
   { label: 'Sponsor', path: '/sponsor' },
-  { label: 'Cours', path: '/lesson', accent: true },
+  { label: 'Cours', path: '/cours', accent: true },
 ];
 
 export const NavHeight = '4rem';

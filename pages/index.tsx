@@ -32,7 +32,7 @@ const Home: NextPage = () => {
       </Head>
 
       <VideoContainer
-        autoPlay
+        autoPlay={false}
         loop
         muted
         style={{

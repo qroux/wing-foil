@@ -1,4 +1,4 @@
-import React from eact';
+import React from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import { Button, Container, styled } from '@mui/material';

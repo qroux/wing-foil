@@ -8,7 +8,7 @@ import { NavHeight } from '../src/components/layout/Navbar';
 
 const VideoContainer = styled('video')(({ theme }) => ({
   [theme.breakpoints.up('xs')]: {
-    height: '50vh',
+    height: '55vh',
   },
   [theme.breakpoints.up('sm')]: {
     height: '70vh',

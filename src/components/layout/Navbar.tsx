@@ -3,7 +3,7 @@ import NavbarLink from '../atoms/NavbarLink';
 import { Button, Container, useTheme, styled } from '@mui/material';
 import Link from 'next/link';
 import Image from 'next/image';
-import logo from '../../../public/surf.svg';
+import logo from '../../../public/surf.png';
 import { motion } from 'framer-motion';
 
 type NavLink = {
@@ -65,7 +65,12 @@ export default function Navbar() {
               }}>
               WingFoil
             </Button> */}
-            <Image src={logo} height={40} width={40} />
+            <div
+              style={{
+                cursor: 'pointer',
+              }}>
+              <Image src={logo} height={40} width={40} />
+            </div>
           </Link>
         </div>
         <div

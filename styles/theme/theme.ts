@@ -1,11 +1,5 @@
-import {
-  createTheme,
-  PaletteColorOptions,
-  PaletteOptions,
-  SimplePaletteColorOptions,
-  Theme,
-} from '@mui/material/styles';
-import { green, orange, red, yellow } from '@mui/material/colors';
+import { green, red } from '@mui/material/colors';
+import { createTheme, Theme } from '@mui/material/styles';
 
 // Palette from foil.png
 // https://coolors.co/30b7ce-dadde7-2b3b3f-91c263
@@ -49,7 +43,9 @@ export const lightPalette: MyPalette = {
     secondary: '#F3F4F7',
   },
   background: {
-    default: '#DADDE7',
+    // original darker
+    // default: '#DADDE7',
+    default: '#F3F4F7',
     paper: '#DADDE7',
   },
 };

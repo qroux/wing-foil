@@ -16,7 +16,7 @@ type NavLink = {
 const links: NavLink[] = [
   // { label: 'About', path: '/about' },
   // { label: 'Sponsor', path: '/sponsor' },
-  // { label: 'Cours', path: '/cours', accent: true },
+  { label: 'Cours', path: '/cours', accent: true },
 ];
 
 export const NavHeight = '4rem';
@@ -30,9 +30,10 @@ export default function Navbar() {
       <Link href={link.path} key={id} passHref>
         <Button
           color={link.accent ? 'error' : 'inherit'}
-          variant={link.accent ? 'outlined' : 'text'}
+          variant={link.accent ? 'contained' : 'text'}
           style={{
             marginLeft: '1rem',
+            fontWeight: 700,
           }}>
           {link.label}
         </Button>

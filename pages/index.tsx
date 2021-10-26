@@ -80,27 +80,44 @@ const Home: NextPage = () => {
                 fontWeight: 400,
                 margin: 0,
               }}>
-              WingFoil
+              Wing Foil
             </h1>
-            <h3
+            <h2
               style={{
                 margin: 0,
               }}>
               La Ciotat
-            </h3>
+            </h2>
             <div
               style={{
                 transform: 'translateY(4.5rem)',
               }}>
               <Link href='/cours' passHref>
-                <Button variant='contained' color='error'>
-                  reserver maintenant
+                <Button variant='outlined' color='inherit'>
+                  Découvrir
                 </Button>
               </Link>
             </div>
           </div>
         </div>
       </div>
+
+      <main>
+        <Container maxWidth='lg' className='presentation'>
+          <h3>Qu'est ce que le Wing Foil</h3>
+          <p>
+            La Wing est une aile légère et maniable qui vous tracte et vous
+            permet de décoller au-dessus de la surface de l’eau, grâce au foil
+            fixé sous la planche. Des sensations uniques, accessibles et fun !!!
+          </p>
+          <p>
+            Vous retrouverez les sensations du kitesurf, du surf et de la
+            planche à voile. Un mix de tous les sports de glisse mais avec un
+            apprentissage plus rapide et ludique. La Wing vous procure un
+            sentiment de liberté.
+          </p>
+        </Container>
+      </main>
     </div>
   );
 };

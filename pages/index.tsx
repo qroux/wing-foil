@@ -1,4 +1,4 @@
-import React from 'react';
+import React from eact';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import { Button, Container, styled } from '@mui/material';
@@ -104,7 +104,7 @@ const Home: NextPage = () => {
 
       <main>
         <Container maxWidth='lg' className='presentation'>
-          <h3>Qu'est ce que le Wing Foil</h3>
+          <h3>Qu’est ce que le Wing Foil</h3>
           <p>
             La Wing est une aile légère et maniable qui vous tracte et vous
             permet de décoller au-dessus de la surface de l’eau, grâce au foil

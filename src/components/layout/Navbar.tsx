@@ -14,9 +14,9 @@ type NavLink = {
 };
 
 const links: NavLink[] = [
-  { label: 'About', path: '/about' },
-  { label: 'Sponsor', path: '/sponsor' },
-  { label: 'Cours', path: '/cours', accent: true },
+  // { label: 'About', path: '/about' },
+  // { label: 'Sponsor', path: '/sponsor' },
+  // { label: 'Cours', path: '/cours', accent: true },
 ];
 
 export const NavHeight = '4rem';
@@ -30,10 +30,9 @@ export default function Navbar() {
       <Link href={link.path} key={id} passHref>
         <Button
           color={link.accent ? 'error' : 'inherit'}
-          variant={link.accent ? 'contained' : 'text'}
+          variant={link.accent ? 'outlined' : 'text'}
           style={{
             marginLeft: '1rem',
-            fontWeight: 700,
           }}>
           {link.label}
         </Button>
@@ -48,6 +47,7 @@ export default function Navbar() {
         // boxShadow: '0 4px 2px -2px rgba(0, 0, 0, 0.185)',
       }}>
       <Container
+        disableGutters={false}
         maxWidth='xl'
         style={{
           display: 'flex',
@@ -57,21 +57,11 @@ export default function Navbar() {
         }}>
         <div className={'right'}>
           <Link href={'/'} passHref>
-            {/* <Button
-              variant='text'
-              color='inherit'
-              size={'large'}
-              style={{
-                fontWeight: 'bold',
-              }}>
-              WingFoil
-            </Button> */}
             <div
               style={{
                 cursor: 'pointer',
               }}>
               <HomeLogo fontSize='large' />
-              {/* <Image src={logo} height={40} width={40} /> */}
             </div>
           </Link>
         </div>

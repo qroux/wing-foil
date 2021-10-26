@@ -45,7 +45,10 @@ export const lightPalette: MyPalette = {
   background: {
     // original darker
     // default: '#DADDE7',
-    default: '#F3F4F7',
+    // greyish
+    // default: '#F3F4F7',
+    // orangish
+    default: '#FCFDFD',
     paper: '#DADDE7',
   },
 };

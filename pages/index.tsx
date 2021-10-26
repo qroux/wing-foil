@@ -1,10 +1,11 @@
 import React from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { Container, styled } from '@mui/material';
+import { Button, Container, styled } from '@mui/material';
 
 import AnimatedPage from './_animatedPage';
 import { NavHeight } from '../src/components/layout/Navbar';
+import Link from 'next/link';
 
 const VideoContainer = styled('video')(({ theme }) => ({
   [theme.breakpoints.up('xs')]: {
@@ -31,7 +32,7 @@ const Home: NextPage = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <VideoContainer
+      {/* <VideoContainer
         autoPlay
         loop
         muted
@@ -42,10 +43,64 @@ const Home: NextPage = () => {
           objectFit: 'cover',
           zIndex: -1,
           width: '100%',
-          // height: absolute ? '100vh' : `calc(100vh - ${NavHeight})`,
+          opacity: 0.05,
         }}>
         <source src='/foil.mp4' type='video/mp4' />
-      </VideoContainer>
+      </VideoContainer> */}
+
+      <div
+        className='page__layout'
+        style={{
+          height: '50vh',
+          width: '100%',
+          display: 'flex',
+        }}>
+        <div
+          className='content'
+          style={{
+            backgroundImage:
+              'radial-gradient(rgba(0,0,0, 0.3), rgba(0,0,0,0)), url(/profil-2.png)',
+            backgroundPosition: 'bottom left',
+            backgroundSize: 'cover',
+            height: '100%',
+            flex: 1,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            color: 'white',
+          }}>
+          <div
+            className='content__container'
+            style={{
+              textAlign: 'center',
+            }}>
+            <h1
+              style={{
+                fontSize: '4rem',
+                fontWeight: 400,
+                margin: 0,
+              }}>
+              WingFoil
+            </h1>
+            <h3
+              style={{
+                margin: 0,
+              }}>
+              La Ciotat
+            </h3>
+            <div
+              style={{
+                transform: 'translateY(4.5rem)',
+              }}>
+              <Link href='/cours' passHref>
+                <Button variant='contained' color='error'>
+                  reserver maintenant
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

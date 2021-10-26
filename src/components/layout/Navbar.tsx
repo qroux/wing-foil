@@ -3,8 +3,9 @@ import NavbarLink from '../atoms/NavbarLink';
 import { Button, Container, useTheme, styled } from '@mui/material';
 import Link from 'next/link';
 import Image from 'next/image';
-import logo from '../../../public/surf.png';
+// import logo from '../../../public/surf.png';
 import { motion } from 'framer-motion';
+import HomeLogo from '@mui/icons-material/HomeTwoTone';
 
 type NavLink = {
   label: string;
@@ -69,7 +70,8 @@ export default function Navbar() {
               style={{
                 cursor: 'pointer',
               }}>
-              <Image src={logo} height={40} width={40} />
+              <HomeLogo fontSize='large' color='#ffffff' />
+              {/* <Image src={logo} height={40} width={40} /> */}
             </div>
           </Link>
         </div>

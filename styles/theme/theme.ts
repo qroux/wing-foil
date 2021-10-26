@@ -30,19 +30,19 @@ interface MyPalette {
   };
 }
 
-const lightPalette: MyPalette = {
+export const lightPalette: MyPalette = {
   primary: {
     main: '#30b7ce',
   },
   secondary: {
     // vert
-    // main: '#91C263',
+    main: '#91C263',
     // main: '#a0f252',
     // orange
-    main: '#fc2d2d',
+    // main: '#fc2d2d',
   },
   error: {
-    main: red.A400,
+    main: '#fc2d2d',
   },
   text: {
     primary: '#2B3B3F',

@@ -28,7 +28,7 @@ export default function Navbar() {
     return (
       <Link href={link.path} key={id} passHref>
         <Button
-          color={link.accent ? 'secondary' : 'inherit'}
+          color={link.accent ? 'error' : 'inherit'}
           variant={link.accent ? 'contained' : 'text'}
           style={{
             marginLeft: '1rem',

@@ -1,5 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
+import { cards } from '../../utils/pricing';
 import PriceCard, { Card } from './PriceCard';
 
 export default {
@@ -13,9 +14,5 @@ const Template: ComponentStory<typeof PriceCard> = (args: any) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  card: {
-    title: 'foil tracté',
-    price: 70,
-    content: ['Première ligne', 'seconde ligne'],
-  },
+  card: cards[3],
 };

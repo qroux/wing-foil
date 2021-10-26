@@ -1,8 +1,11 @@
 import { useTheme } from '@mui/material';
 import React from 'react';
 import Divider from '../atoms/Divider';
+import PriceCardTag from '../atoms/PriceCardTag';
 
 export interface Card {
+  tag?: string;
+  color?: string;
   title: string;
   price: number;
   content: string[];
@@ -10,7 +13,7 @@ export interface Card {
 
 export default function PriceCard({ card }: { card: Card }) {
   const theme = useTheme();
-  const { title, price, content } = card;
+  const { title, price, content, tag, color } = card;
 
   const renderContent = content.map((line, id) => <li key={id}>{line}</li>);
 
@@ -23,8 +26,12 @@ export default function PriceCard({ card }: { card: Card }) {
         backgroundColor: 'white',
         borderRadius: 5,
         width: '100%',
-        padding: '2rem 1rem',
+        padding: '1rem 1rem',
       }}>
+      <div className='card__tag' style={{}}>
+        <PriceCardTag tag={tag} color={color} />
+      </div>
+
       <div
         className='header'
         style={{

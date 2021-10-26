@@ -11,9 +11,9 @@ export default function PriceGrid({ cards }: { cards: Card[] }) {
       className='grid__container'
       style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(20rem, 1fr))',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(16rem, 1fr))',
         gridGap: '3rem',
-        gridRowGap: '1rem',
+        gridRowGap: '2rem',
       }}>
       {renderCards}
     </div>

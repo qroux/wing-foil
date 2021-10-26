@@ -9,9 +9,11 @@ export default function Cours() {
   return (
     <AnimatedPage>
       <Container maxWidth='xl' style={{}}>
-        <h1>Cours</h1>
-        <h3>Nos prestations</h3>
-        <PriceGrid cards={cards} />
+        <h1>Apprentissage / Pratique</h1>
+        <h3>Prestations</h3>
+        <div style={{ marginBottom: '5rem' }}>
+          <PriceGrid cards={cards} />
+        </div>
       </Container>
     </AnimatedPage>
   );

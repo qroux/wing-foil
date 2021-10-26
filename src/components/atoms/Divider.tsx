@@ -8,6 +8,7 @@ export default function Divider() {
         width: '100%',
         height: 1,
         backgroundColor: 'rgba(0,0,0, 0.05)',
+        marginBottom: '1.5rem',
       }}
     />
   );

@@ -16,6 +16,7 @@ const card = cards[3];
 
 export const Default = Template.bind({});
 Default.args = {
-  tag: card.tag,
+  label: card.tag,
   color: card.color,
+  outlined: false,
 };

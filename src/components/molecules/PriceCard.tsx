@@ -4,8 +4,10 @@ import Divider from '../atoms/Divider';
 import PriceCardTag from '../atoms/PriceCardTag';
 
 export interface Card {
+  photo: string;
   tag?: string;
   color?: string;
+  duration: string;
   title: string;
   price: number;
   content: string[];
@@ -13,9 +15,17 @@ export interface Card {
 
 export default function PriceCard({ card }: { card: Card }) {
   const theme = useTheme();
-  const { title, price, content, tag, color } = card;
+  const { title, price, content, tag, color, duration, photo } = card;
 
-  const renderContent = content.map((line, id) => <li key={id}>{line}</li>);
+  const renderContent = content.map((line, id) => (
+    <div
+      style={{
+        textTransform: 'capitalize',
+      }}
+      key={id}>
+      {line}
+    </div>
+  ));
 
   return (
     <div
@@ -27,35 +37,74 @@ export default function PriceCard({ card }: { card: Card }) {
         borderRadius: 5,
         width: '100%',
         minHeight: '15rem',
-        padding: '1rem 1rem',
+
+        position: 'relative',
+        overflow: 'hidden',
       }}>
-      <div className='card__tag' style={{}}>
-        <PriceCardTag tag={tag} color={color} />
+      <div
+        className='card__content'
+        style={{
+          padding: '1rem 1rem',
+        }}>
+        <div
+          className='card__tag'
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+          }}>
+          <PriceCardTag label={tag} color={color} />
+          <PriceCardTag label={duration} color={color} outlined={true} />
+        </div>
+
+        <div
+          className='header'
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+          }}>
+          <div className='header__title'>
+            <h3
+              style={{
+                textTransform: 'capitalize',
+              }}>
+              {title}
+            </h3>
+          </div>
+        </div>
+
+        <Divider />
+
+        <div
+          className='card__content'
+          style={{
+            minHeight: '4rem',
+          }}>
+          {renderContent}
+        </div>
       </div>
 
       <div
-        className='header'
+        className='footer__image'
         style={{
-          display: 'flex',
-          justifyContent: 'space-between',
+          height: '10rem',
+          width: '100%',
+          backgroundImage: `radial-gradient(rgba(0,0,0, 0.3), rgba(0,0,0,0)), url(/${photo})`,
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
         }}>
-        <div className='header__title'>
-          <h3>{title}</h3>
-        </div>
         <div
-          className='header__price'
+          className='footer__price'
           style={{
-            minWidth: '4rem',
-            width: '4rem',
+            fontSize: '2rem',
+            fontWeight: 500,
+            height: '100%',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            color: 'white',
           }}>
-          <h3>{price} €</h3>
+          {price} €
         </div>
-      </div>
-
-      <Divider />
-
-      <div className='card__content'>
-        <ul>{renderContent}</ul>
       </div>
     </div>
   );

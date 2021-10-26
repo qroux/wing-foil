@@ -1,24 +1,33 @@
 import React from 'react';
+import AccessTimeIcon from '@mui/icons-material/Timer';
 
 export default function PriceCardTag({
-  tag = '-',
-  color = 'transparent',
+  label,
+  color = 'black',
+  outlined = false,
 }: {
-  tag?: string;
+  label?: string;
   color?: string;
+  outlined?: boolean;
 }) {
+  console.log(color);
   return (
     <div
       className='tag'
       style={{
-        backgroundColor: color,
+        backgroundColor: label && !outlined ? color : 'transparent',
         borderRadius: 5,
-        color: 'white',
-        fontWeight: 'bold',
+        color: outlined ? color : 'white',
+        fontWeight: 300,
+        maxWidth: '7rem',
         display: 'flex',
         justifyContent: 'center',
+        alignItems: 'center',
+        padding: '0 0.4rem',
+        // border: outlined ? `1px solid ${color}` : '',
       }}>
-      {tag}
+      {outlined ? <AccessTimeIcon fontSize='small' /> : null}{' '}
+      {label ? label : '-'}
     </div>
   );
 }

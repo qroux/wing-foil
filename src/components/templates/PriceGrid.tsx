@@ -3,7 +3,7 @@ import PriceCard, { Card } from '../molecules/PriceCard';
 
 export default function PriceGrid({ cards }: { cards: Card[] }) {
   const renderCards = cards.map((card, id) => (
-    <PriceCard card={card} key={id} />
+    <PriceCard card={card} key={id} delay={id} />
   ));
 
   return (

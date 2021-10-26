@@ -1,4 +1,5 @@
 import { useTheme } from '@mui/material';
+import { motion } from 'framer-motion';
 import React from 'react';
 import Divider from '../atoms/Divider';
 import PriceCardTag from '../atoms/PriceCardTag';
@@ -13,7 +14,13 @@ export interface Card {
   content: string[];
 }
 
-export default function PriceCard({ card }: { card: Card }) {
+export default function PriceCard({
+  card,
+  delay,
+}: {
+  card: Card;
+  delay: number;
+}) {
   const theme = useTheme();
   const { title, price, content, tag, color, duration, photo } = card;
 
@@ -28,7 +35,7 @@ export default function PriceCard({ card }: { card: Card }) {
   ));
 
   return (
-    <div
+    <motion.div
       className='card__container'
       style={{
         boxShadow:
@@ -37,9 +44,20 @@ export default function PriceCard({ card }: { card: Card }) {
         borderRadius: 5,
         width: '100%',
         minHeight: '15rem',
-
         position: 'relative',
         overflow: 'hidden',
+      }}
+      initial={{
+        translateY: '-1rem',
+        opacity: 0,
+      }}
+      animate={{
+        translateY: 0,
+        opacity: 1,
+      }}
+      transition={{
+        duration: 0.5,
+        delay: 0.25 * delay,
       }}>
       <div
         className='card__content'
@@ -106,6 +124,6 @@ export default function PriceCard({ card }: { card: Card }) {
           {price} €
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

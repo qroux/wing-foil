@@ -139,7 +139,7 @@ const Home: NextPage = () => {
             <div
               className='image__container'
               style={{
-                backgroundImage: 'url(/sylvain-min.jpg)',
+                backgroundImage: 'url(/sylvain-min.webp)',
                 backgroundSize: 'cover',
                 width: '100%',
                 height: '100%',
@@ -203,7 +203,7 @@ const Home: NextPage = () => {
               className='image__container'
               style={{
                 backgroundImage:
-                  'linear-gradient(rgba(0,0,0, 0.3), rgba(0,0,0, 0.3)), url(/foil-1-min.jpg)',
+                  'linear-gradient(rgba(0,0,0, 0.3), rgba(0,0,0, 0.3)), url(/foil-1-min.webp)',
                 backgroundSize: 'cover',
                 width: '100%',
                 height: '100%',

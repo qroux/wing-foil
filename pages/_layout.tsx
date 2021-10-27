@@ -14,7 +14,7 @@ function Layout({ children }: { children: ReactNode }) {
       <CssBaseline />
       <div
         style={{
-          minHeight: '100vh',
+          minHeight: '100.1vh',
         }}>
         <Navbar />
         {children}

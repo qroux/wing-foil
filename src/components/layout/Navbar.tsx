@@ -58,12 +58,17 @@ export default function Navbar() {
         }}>
         <div className={'right'}>
           <Link href={'/'} passHref>
-            <div
+            {/* <div
               style={{
                 cursor: 'pointer',
+              }}> */}
+            <a
+              style={{
+                color: 'black',
               }}>
               <HomeLogo fontSize='large' />
-            </div>
+            </a>
+            {/* </div> */}
           </Link>
         </div>
         <div

@@ -38,12 +38,13 @@ const Home: NextPage = () => {
           height: '50vh',
           width: '100%',
           display: 'flex',
+          // marginTop: NavHeight,
         }}>
         <div
           className='content'
           style={{
             backgroundImage:
-              'radial-gradient(rgba(0,0,0, 0.3), rgba(0,0,0,0)), url(/profil-2-min.png)',
+              'radial-gradient(rgba(0,0,0, 0.3), rgba(0,0,0,0)), url(/profil-2-min.webp)',
             backgroundPosition: 'bottom left',
             backgroundSize: 'cover',
             height: '100%',

@@ -10,7 +10,6 @@ export default function Cours() {
     <AnimatedPage>
       <Container maxWidth='xl' style={{}}>
         <h1>Apprentissage / Pratique</h1>
-        <h3>Prestations</h3>
         <div style={{ marginBottom: '5rem' }}>
           <PriceGrid cards={cards} />
         </div>

@@ -23,7 +23,6 @@ export const NavHeight = '4rem';
 
 export default function Navbar() {
   const theme = useTheme();
-  // console.log(theme.palette);
 
   const renderLinks = links.map((link, id) => {
     return (
@@ -42,10 +41,15 @@ export default function Navbar() {
   });
 
   return (
-    <motion.div
+    <div
       style={{
         opacity: 1,
         // boxShadow: '0 4px 2px -2px rgba(0, 0, 0, 0.185)',
+        // position: 'fixed',
+        // top: 0,
+        // left: 0,
+        // width: '100%',
+        // backgroundColor: theme.palette.background.default,
       }}>
       <Container
         disableGutters={false}
@@ -58,17 +62,12 @@ export default function Navbar() {
         }}>
         <div className={'right'}>
           <Link href={'/'} passHref>
-            {/* <div
-              style={{
-                cursor: 'pointer',
-              }}> */}
             <a
               style={{
                 color: 'black',
               }}>
               <HomeLogo fontSize='large' />
             </a>
-            {/* </div> */}
           </Link>
         </div>
         <div
@@ -80,6 +79,6 @@ export default function Navbar() {
           {renderLinks}
         </div>
       </Container>
-    </motion.div>
+    </div>
   );
 }

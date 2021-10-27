@@ -43,7 +43,7 @@ const Home: NextPage = () => {
           className='content'
           style={{
             backgroundImage:
-              'radial-gradient(rgba(0,0,0, 0.3), rgba(0,0,0,0)), url(/profil-2.png)',
+              'radial-gradient(rgba(0,0,0, 0.3), rgba(0,0,0,0)), url(/profil-2-min.png)',
             backgroundPosition: 'bottom left',
             backgroundSize: 'cover',
             height: '100%',
@@ -138,7 +138,7 @@ const Home: NextPage = () => {
             <div
               className='image__container'
               style={{
-                backgroundImage: 'url(/sylvain.jpg)',
+                backgroundImage: 'url(/sylvain-min.jpg)',
                 backgroundSize: 'cover',
                 width: '100%',
                 height: '100%',
@@ -202,7 +202,7 @@ const Home: NextPage = () => {
               className='image__container'
               style={{
                 backgroundImage:
-                  'linear-gradient(rgba(0,0,0, 0.3), rgba(0,0,0, 0.3)), url(/foil-1.jpg)',
+                  'linear-gradient(rgba(0,0,0, 0.3), rgba(0,0,0, 0.3)), url(/foil-1-min.jpg)',
                 backgroundSize: 'cover',
                 width: '100%',
                 height: '100%',
@@ -217,12 +217,10 @@ const Home: NextPage = () => {
                 color='error'
                 variant='contained'
                 size='large'
-                style={
-                  {
-                    // fontWeight: 'bold',
-                    // color: 'white',
-                  }
-                }>
+                style={{
+                  fontWeight: 'bold',
+                  // color: 'white',
+                }}>
                 Réserver une session
               </Button>
             </div>

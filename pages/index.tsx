@@ -145,7 +145,7 @@ const Home: NextPage = () => {
                 height: '100%',
                 minHeight: '12rem',
                 backgroundPosition: 'center',
-                boxShadow: '0 4px 2px -2px rgba(0, 0, 0, 0.185)',
+                // boxShadow: '0 4px 2px -2px rgba(0, 0, 0, 0.185)',
                 borderRadius: 2,
               }}
             />

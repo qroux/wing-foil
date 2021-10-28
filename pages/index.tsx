@@ -134,7 +134,7 @@ const Home: NextPage = () => {
             className='col__right'
             style={{
               // border: '1px solid black',
-              flex: 0.4,
+              flex: 0.3,
             }}>
             <div
               className='image__container'
@@ -197,7 +197,7 @@ const Home: NextPage = () => {
             className='col__right'
             style={{
               // border: '1px solid black',
-              flex: 0.4,
+              flex: 0.3,
             }}>
             <div
               className='image__container'

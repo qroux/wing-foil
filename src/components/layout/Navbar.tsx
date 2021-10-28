@@ -53,7 +53,7 @@ export default function Navbar() {
       }}>
       <Container
         disableGutters={false}
-        maxWidth='xl'
+        maxWidth='lg'
         style={{
           display: 'flex',
           justifyContent: 'space-between',

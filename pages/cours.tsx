@@ -8,7 +8,7 @@ import { cards } from '../src/utils/pricing';
 export default function Cours() {
   return (
     <AnimatedPage>
-      <Container maxWidth='xl' style={{}}>
+      <Container maxWidth='lg' style={{}}>
         <h1>Apprentissage / Pratique</h1>
         <div style={{ marginBottom: '5rem' }}>
           <PriceGrid cards={cards} />

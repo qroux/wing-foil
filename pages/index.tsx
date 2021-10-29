@@ -68,23 +68,13 @@ const Home: NextPage = () => {
               }}>
               Cassis | La Ciotat
             </h2>
-            {/* <div
-              style={{
-                transform: 'translateY(4.5rem)',
-              }}>
-              <Link href='/cours' passHref>
-                <Button variant='outlined' color='inherit'>
-                  Découvrir
-                </Button>
-              </Link>
-            </div> */}
           </div>
         </div>
       </div>
 
       <main>
         <PresContainer>
-          <ContentColumn header={"Qu'est ce que le WingFoil"}>
+          <ContentColumn header={"Qu'est ce que le Wing Foil ?"}>
             <p>
               La Wing est une aile légère et maniable qui vous tracte et vous
               permet de décoller au-dessus de la surface de l’eau, grâce au foil

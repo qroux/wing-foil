@@ -16,7 +16,7 @@ export default function ContentColumn({
       }}>
       <h3
         style={{
-          fontSize: '2rem',
+          fontSize: '1.8rem',
           fontWeight: 600,
         }}>
         {header}

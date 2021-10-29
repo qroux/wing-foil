@@ -9,6 +9,7 @@ import ContentColumn from '../src/components/molecules/ContentColumn';
 import ImageColumn from '../src/components/molecules/ImageColumn';
 import Link from 'next/link';
 import CallToAction from '../src/components/atoms/CallToAction';
+import Banner from '../src/components/layout/Banner';
 
 const Home: NextPage = () => {
   const theme = useTheme();
@@ -21,56 +22,9 @@ const Home: NextPage = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <div
-        className='page__layout'
-        style={{
-          height: '50vh',
-          width: '100%',
-          display: 'flex',
-          // marginTop: NavHeight,
-        }}>
-        <div
-          className='content'
-          style={{
-            backgroundImage:
-              'radial-gradient(rgba(0,0,0, 0.3), rgba(0,0,0,0)), url(/profil-2-min.webp)',
-            backgroundPosition: 'bottom left',
-            backgroundSize: 'cover',
-            height: '100%',
-            flex: 1,
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            color: 'white',
-          }}>
-          <div
-            className='content__container'
-            style={{
-              textAlign: 'center',
-            }}>
-            <h1
-              style={{
-                fontSize: '4rem',
-                margin: 0,
-              }}>
-              <span
-                style={{
-                  color: theme.palette.primary.main,
-                }}>
-                W
-              </span>
-              ing Foil
-            </h1>
-            <h2
-              style={{
-                margin: 0,
-                fontWeight: 500,
-              }}>
-              Cassis | La Ciotat
-            </h2>
-          </div>
-        </div>
-      </div>
+      {/* <header>
+        <Banner />
+      </header> */}
 
       <main>
         <PresContainer>

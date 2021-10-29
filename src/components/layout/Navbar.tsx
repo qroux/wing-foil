@@ -44,6 +44,10 @@ export default function Navbar() {
     <div
       style={{
         opacity: 1,
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
       }}>
       <Container
         disableGutters={false}
@@ -58,7 +62,7 @@ export default function Navbar() {
           <Link href={'/'} passHref>
             <a
               style={{
-                color: 'black',
+                color: theme.palette.primary.main,
               }}>
               <HomeLogo fontSize='large' />
             </a>

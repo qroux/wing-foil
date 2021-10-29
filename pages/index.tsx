@@ -1,25 +1,12 @@
 import React from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { Button, Container, styled, useTheme } from '@mui/material';
+import { useTheme } from '@mui/material';
 
 import AnimatedPage from './_animatedPage';
-import { NavHeight } from '../src/components/layout/Navbar';
-import Link from 'next/link';
-import Image from 'next/image';
-
-const PresContainer = styled(Container)(({ theme }) => ({
-  [theme.breakpoints.up('xs')]: {
-    flexDirection: 'column',
-    marginTop: '2rem',
-    marginBottom: '2rem',
-  },
-  [theme.breakpoints.up('sm')]: {
-    flexDirection: 'row',
-    marginTop: '5rem',
-    marginBottom: '5rem',
-  },
-}));
+import PresContainer from '../src/components/templates/PresContainer';
+import ContentColumn from '../src/components/molecules/ContentColumn';
+import ImageColumn from '../src/components/molecules/ImageColumn';
 
 const Home: NextPage = () => {
   const theme = useTheme();
@@ -93,28 +80,8 @@ const Home: NextPage = () => {
       </div>
 
       <main>
-        <PresContainer
-          maxWidth='lg'
-          className='presentation'
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-          }}>
-          <div
-            className='col__left'
-            style={{
-              flex: 0.7,
-              marginBottom: '2em',
-              paddingRight: '1.5rem',
-            }}>
-            <h3
-              style={{
-                fontSize: '2rem',
-                fontWeight: 600,
-              }}>
-              Qu’est ce que le Wing Foil
-            </h3>
-
+        <PresContainer>
+          <ContentColumn header={"Qu'est ce que le WingFoil"}>
             <p>
               La Wing est une aile légère et maniable qui vous tracte et vous
               permet de décoller au-dessus de la surface de l’eau, grâce au foil
@@ -129,50 +96,12 @@ const Home: NextPage = () => {
               La Wing vous procure des sensations uniques et un sentiment de
               liberté.
             </p>
-          </div>
-          <div
-            className='col__right'
-            style={{
-              // border: '1px solid black',
-              flex: 0.3,
-            }}>
-            <div
-              className='image__container'
-              style={{
-                backgroundImage: 'url(/sylvain-min-gimp.webp)',
-                backgroundSize: 'cover',
-                width: '100%',
-                height: '100%',
-                minHeight: '12rem',
-                backgroundPosition: 'center',
-                // boxShadow: '0 4px 2px -2px rgba(0, 0, 0, 0.185)',
-                borderRadius: 2,
-              }}
-            />
-          </div>
+          </ContentColumn>
+          <ImageColumn imagePath={'/sylvain-min-gimp.webp'} />
         </PresContainer>
-        <PresContainer
-          maxWidth='lg'
-          className='presentation'
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-          }}>
-          <div
-            className='col__left'
-            style={{
-              flex: 0.7,
-              marginBottom: '2em',
-              paddingRight: '1.5rem',
-            }}>
-            <h3
-              style={{
-                fontSize: '2rem',
-                fontWeight: 600,
-              }}>
-              Par où commencer ?
-            </h3>
 
+        <PresContainer>
+          <ContentColumn header={'Par où commencer ?'}>
             <p>L’initiation se déroule en trois étapes :</p>
             <ul
               style={{
@@ -194,40 +123,8 @@ const Home: NextPage = () => {
             <p style={{ fontWeight: 'bold' }}>
               * Matériel adapté à tous les niveaux et tous les gabarits
             </p>
-          </div>
-          <div
-            className='col__right'
-            style={{
-              // border: '1px solid black',
-              flex: 0.3,
-            }}>
-            <div
-              className='image__container'
-              style={{
-                backgroundImage:
-                  'linear-gradient(rgba(0,0,0, 0), rgba(0,0,0, 0)), url(/foil-1-min-gimp.webp)',
-                backgroundSize: 'cover',
-                width: '100%',
-                height: '90%',
-                minHeight: '12rem',
-                backgroundPosition: 'center',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}>
-              {/* <Button
-                href='/cours'
-                color='error'
-                variant='contained'
-                size='large'
-                style={{
-                  fontWeight: 'bold',
-                  // color: 'white',
-                }}>
-                Réserver une session
-              </Button> */}
-            </div>
-          </div>
+          </ContentColumn>
+          <ImageColumn imagePath={'/foil-1-min-gimp.webp'} />
         </PresContainer>
       </main>
     </AnimatedPage>

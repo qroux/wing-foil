@@ -13,7 +13,6 @@ export default function ContentColumn({
       style={{
         flex: 0.7,
         marginBottom: '2em',
-        // paddingRight: '1.5rem',
       }}>
       <h3
         style={{

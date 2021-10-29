@@ -44,12 +44,6 @@ export default function Navbar() {
     <div
       style={{
         opacity: 1,
-        // boxShadow: '0 4px 2px -2px rgba(0, 0, 0, 0.185)',
-        // position: 'fixed',
-        // top: 0,
-        // left: 0,
-        // width: '100%',
-        // backgroundColor: theme.palette.background.default,
       }}>
       <Container
         disableGutters={false}

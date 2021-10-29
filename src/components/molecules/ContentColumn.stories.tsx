@@ -18,17 +18,16 @@ Default.args = {
   children: (
     <>
       <p>
-        La Wing est une aile légère et maniable qui vous tracte et vous permet
-        de décoller au-dessus de la surface de l’eau, grâce au foil fixé sous la
-        planche.
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui rerum odio
+        esse, reiciendis deleniti totam asperiores perspiciatis eligendi alias
+        laboriosam iure sed voluptatibus quia aspernatur commodi nisi dolor eius
+        quo!
       </p>
       <p>
-        Vous retrouverez les sensations du kitesurf, du surf et de la planche à
-        voile. Un mix de tous les sports de glisse mais avec un apprentissage
-        plus rapide et ludique.
-      </p>
-      <p>
-        La Wing vous procure des sensations uniques et un sentiment de liberté.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus illum
+        expedita ut ex corporis maxime esse commodi. Magni corrupti temporibus
+        voluptate minima eos inventore, fugiat provident quam, doloremque neque
+        odio?
       </p>
     </>
   ),

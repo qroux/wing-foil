@@ -43,6 +43,7 @@ export default function PriceCard({
         backgroundColor: 'white',
         borderRadius: 5,
         width: '100%',
+        maxWidth: '25rem',
         minHeight: '15rem',
         position: 'relative',
         overflow: 'hidden',

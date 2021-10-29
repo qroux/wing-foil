@@ -1,12 +1,14 @@
 import React from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { useTheme } from '@mui/material';
+import { Button, useTheme } from '@mui/material';
 
 import AnimatedPage from './_animatedPage';
 import PresContainer from '../src/components/templates/PresContainer';
 import ContentColumn from '../src/components/molecules/ContentColumn';
 import ImageColumn from '../src/components/molecules/ImageColumn';
+import Link from 'next/link';
+import CallToAction from '../src/components/atoms/CallToAction';
 
 const Home: NextPage = () => {
   const theme = useTheme();
@@ -62,6 +64,7 @@ const Home: NextPage = () => {
             <h2
               style={{
                 margin: 0,
+                fontWeight: 500,
               }}>
               Cassis | La Ciotat
             </h2>
@@ -93,8 +96,7 @@ const Home: NextPage = () => {
               apprentissage plus rapide et ludique.
             </p>
             <p>
-              La Wing vous procure des sensations uniques et un sentiment de
-              liberté.
+              La Wing procure des sensations uniques et un sentiment de liberté.
             </p>
           </ContentColumn>
           <ImageColumn imagePath={'/sylvain-min-gimp.webp'} />
@@ -120,9 +122,12 @@ const Home: NextPage = () => {
               Une session de foil tracté par un bateau pourra être proposé aux
               initiations d’une heure et les jours sans vent.
             </p>
+
             <p style={{ fontWeight: 'bold' }}>
               * Matériel adapté à tous les niveaux et tous les gabarits
             </p>
+
+            <CallToAction label='découvrir' />
           </ContentColumn>
           <ImageColumn imagePath={'/foil-1-min-gimp.webp'} />
         </PresContainer>

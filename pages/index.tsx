@@ -205,17 +205,17 @@ const Home: NextPage = () => {
               className='image__container'
               style={{
                 backgroundImage:
-                  'linear-gradient(rgba(0,0,0, 0.3), rgba(0,0,0, 0.3)), url(/foil-1-min.webp)',
+                  'linear-gradient(rgba(0,0,0, 0), rgba(0,0,0, 0)), url(/foil-1-min-gimp.webp)',
                 backgroundSize: 'cover',
                 width: '100%',
-                height: '100%',
+                height: '90%',
                 minHeight: '12rem',
                 backgroundPosition: 'center',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
               }}>
-              <Button
+              {/* <Button
                 href='/cours'
                 color='error'
                 variant='contained'
@@ -225,7 +225,7 @@ const Home: NextPage = () => {
                   // color: 'white',
                 }}>
                 Réserver une session
-              </Button>
+              </Button> */}
             </div>
           </div>
         </PresContainer>

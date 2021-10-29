@@ -18,7 +18,7 @@ export default function Footer() {
         backgroundColor: '#182225',
         display: 'flex',
         justifyContent: 'center',
-        alignItems: 'flex-end',
+        alignItems: 'center',
         color: 'white',
       }}>
       <div className='items'>{renderItems}</div>

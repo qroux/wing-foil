@@ -1,20 +1,20 @@
 import createDataContext from './createDataContext';
 
 export enum Actions {
-  updateLang = 'UPDATELANG',
+  toggleLang = 'TOGGLELANG',
   error = 'ERROR',
 }
 
 interface Action {
   type: Actions;
-  payload: { [key: string]: any };
+  payload?: { [key: string]: any };
 }
 
 // REDUCER
 const AppReducer = (state: { [key: string]: any }, action: Action) => {
   switch (action.type) {
-    case Actions.updateLang:
-      return { ...state, lang: 'updated' };
+    case Actions.toggleLang:
+      return { ...state, lang: state.lang === 'fr' ? 'en' : 'fr', error: null };
     case Actions.error:
       return { ...state, error: 'something went wrong' };
     default:
@@ -23,25 +23,22 @@ const AppReducer = (state: { [key: string]: any }, action: Action) => {
 };
 
 // ACTIONS
-const updateLang = (dispatch: (action: Action) => void) => async ({
-  lang,
-}: {
-  lang: string;
-}) => {
+const toggleLang = (dispatch: (action: Action) => void) => async () => {
   try {
     dispatch({
-      type: Actions.updateLang,
-      payload: { lang },
+      type: Actions.toggleLang,
     });
   } catch (err) {
-    dispatch({ type: Actions.error, payload: { lang } });
+    dispatch({ type: Actions.error });
   }
 };
 
-export default createDataContext({
+export const { Provider, Context } = createDataContext({
   reducer: AppReducer,
-  actions: [],
+  actions: {
+    toggleLang,
+  },
   initialState: {
-    lang: 'dz',
+    lang: 'fr',
   },
 });

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import NavbarLink from '../atoms/NavbarLink';
 import { Button, Container, useTheme, styled } from '@mui/material';
 import Link from 'next/link';
@@ -6,6 +6,8 @@ import Image from 'next/image';
 // import logo from '../../../public/surf.png';
 import { motion } from 'framer-motion';
 import HomeLogo from '@mui/icons-material/HomeTwoTone';
+
+import { Context as AppContext } from '../../context/AppContext';
 
 type NavLink = {
   label: string;
@@ -24,6 +26,16 @@ export const NavHeight = '4rem';
 export default function Navbar() {
   const theme = useTheme();
 
+  // const context = useContext(AppContext);
+  // const lang = context.state.lang;
+
+  const {
+    // @ts-ignore
+    state: { lang },
+    // @ts-ignore
+    toggleLang,
+  } = useContext(AppContext);
+
   const renderLinks = links.map((link, id) => {
     return (
       <Link href={link.path} key={id} passHref>
@@ -39,6 +51,27 @@ export default function Navbar() {
       </Link>
     );
   });
+
+  const switchLanguage = (
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '2rem',
+        width: '3rem',
+      }}
+      onClick={() => {
+        toggleLang();
+      }}>
+      <Image
+        src={lang === 'fr' ? '/flags/english.png' : '/flags/french.png'}
+        width={20}
+        height={20}
+        alt={lang === 'fr' ? 'switch to english' : 'passer en français'}
+      />
+    </div>
+  );
 
   return (
     <div
@@ -73,7 +106,9 @@ export default function Navbar() {
           style={{
             display: 'flex',
             justifyContent: 'center',
+            alignItems: 'center',
           }}>
+          {switchLanguage}
           {renderLinks}
         </div>
       </Container>

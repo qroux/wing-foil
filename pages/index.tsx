@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import { useTheme } from '@mui/material';
+
+import { Context as AppContext } from '../src/context/AppContext';
 
 import AnimatedPage from './_animatedPage';
 import PresContainer from '../src/components/templates/PresContainer';
@@ -9,9 +11,13 @@ import ContentColumn from '../src/components/molecules/ContentColumn';
 import ImageColumn from '../src/components/molecules/ImageColumn';
 import CallToAction from '../src/components/atoms/CallToAction';
 
-const Home: NextPage = (props) => {
-  // @ts-ignore
-  const { locale } = props;
+const Home: NextPage = () => {
+  const {
+    // @ts-ignore
+    state: { lang },
+  } = useContext(AppContext);
+  console.log(lang);
+
   return (
     <AnimatedPage>
       <Head>
@@ -23,7 +29,7 @@ const Home: NextPage = (props) => {
       <main>
         <PresContainer>
           <ContentColumn header={"Qu'est ce que le Wing Foil ?"}>
-            <p>Local = {locale}</p>
+            <p>Local = {lang}</p>
             <p>
               La Wing est une aile légère et maniable qui vous tracte et vous
               permet de décoller au-dessus de la surface de l’eau, grâce au foil
@@ -74,13 +80,5 @@ const Home: NextPage = (props) => {
     </AnimatedPage>
   );
 };
-
-export function getStaticProps({ locale }: { locale: string }) {
-  return {
-    props: {
-      locale,
-    },
-  };
-}
 
 export default Home;

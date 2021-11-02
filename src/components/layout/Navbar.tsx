@@ -8,9 +8,10 @@ import { motion } from 'framer-motion';
 import HomeLogo from '@mui/icons-material/HomeTwoTone';
 
 import { Context as AppContext } from '../../context/AppContext';
+import { useLang } from '../../hooks/useLang';
 
 type NavLink = {
-  label: string;
+  label: [string, string];
   path: string;
   accent?: boolean;
 };
@@ -18,7 +19,7 @@ type NavLink = {
 const links: NavLink[] = [
   // { label: 'About', path: '/about' },
   // { label: 'Sponsor', path: '/sponsor' },
-  { label: 'Cours', path: '/cours', accent: true },
+  { label: ['Cours', 'Session'], path: '/cours', accent: true },
 ];
 
 export const NavHeight = '4rem';
@@ -26,15 +27,14 @@ export const NavHeight = '4rem';
 export default function Navbar() {
   const theme = useTheme();
 
-  // const context = useContext(AppContext);
-  // const lang = context.state.lang;
-
   const {
     // @ts-ignore
     state: { lang },
     // @ts-ignore
     toggleLang,
   } = useContext(AppContext);
+
+  const index = useLang(lang);
 
   const renderLinks = links.map((link, id) => {
     return (
@@ -45,8 +45,9 @@ export default function Navbar() {
           style={{
             marginLeft: '1rem',
             fontWeight: 700,
+            width: '6rem',
           }}>
-          {link.label}
+          {link.label[index]}
         </Button>
       </Link>
     );
@@ -60,6 +61,7 @@ export default function Navbar() {
         alignItems: 'center',
         height: '2rem',
         width: '3rem',
+        cursor: 'pointer',
       }}
       onClick={() => {
         toggleLang();

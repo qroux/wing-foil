@@ -1,12 +1,12 @@
 import React, { ReactNode } from 'react';
 
-export default function ContentColumn({
+const ContentColumn = ({
   header,
   children,
 }: {
   header: string;
   children: ReactNode;
-}) {
+}) => {
   return (
     <div
       className='col__left'
@@ -25,4 +25,6 @@ export default function ContentColumn({
       {children}
     </div>
   );
-}
+};
+
+export default ContentColumn;

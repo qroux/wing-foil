@@ -61,7 +61,7 @@ export default function Banner() {
               padding: '0 1rem',
               marginTop: '1rem',
             }}>
-            04 42 01 80 01
+            +33 4 42 01 80 01
           </h3>
         </div>
       </div>

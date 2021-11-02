@@ -9,15 +9,17 @@ function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
   return (
-    <Layout>
-      <AnimatePresence exitBeforeEnter>
-        <Component
-          {...pageProps}
-          location={router.pathname}
-          key={router.pathname}
-        />
-      </AnimatePresence>
-    </Layout>
+    <AppProvider>
+      <Layout>
+        <AnimatePresence exitBeforeEnter>
+          <Component
+            {...pageProps}
+            location={router.pathname}
+            key={router.pathname}
+          />
+        </AnimatePresence>
+      </Layout>
+    </AppProvider>
   );
 }
 export default MyApp;

@@ -51,6 +51,7 @@ export default function Banner() {
             }}>
             Cassis | La Ciotat
           </h2>
+          <a href="tel:+33442018001">
           <h3
             style={{
               margin: 0,
@@ -63,6 +64,7 @@ export default function Banner() {
             }}>
             +33 4 42 01 80 01
           </h3>
+          </a>
         </div>
       </div>
     </div>

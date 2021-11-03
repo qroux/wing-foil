@@ -9,7 +9,7 @@ import HomeLogo from '@mui/icons-material/HomeTwoTone';
 
 import { Context as AppContext } from '../../context/AppContext';
 import { useLang } from '../../hooks/useLang';
-import SwitchLang from '../molecules/LanguageSwitchBtn'
+import SwitchLang from '../molecules/LanguageSwitchBtn';
 
 type NavLink = {
   label: [string, string];
@@ -30,7 +30,7 @@ export default function Navbar() {
 
   const {
     // @ts-ignore
-    state: { lang }
+    state: { lang },
   } = useContext(AppContext);
 
   const index = useLang(lang);
@@ -51,7 +51,6 @@ export default function Navbar() {
       </Link>
     );
   });
-
 
   return (
     <div
@@ -88,7 +87,6 @@ export default function Navbar() {
             justifyContent: 'center',
             alignItems: 'center',
           }}>
-          
           {renderLinks}
           <SwitchLang />
         </div>

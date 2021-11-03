@@ -12,4 +12,4 @@ const Template: ComponentStory<typeof LanguageSwitchBtn> = (args: any) => {
 };
 
 export const Default = Template.bind({});
-Default.args = {}
+Default.args = {};

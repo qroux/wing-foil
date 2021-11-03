@@ -3,6 +3,7 @@ import theme from '../styles/theme/theme';
 import { ThemeProvider } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
 import { useDarkMode } from 'storybook-dark-mode';
+import {Provider as AppProvider} from '../src/context/AppContext'
 
 const darkTheme = theme(true);
 const lightTheme = theme(false);
@@ -24,9 +25,11 @@ export const parameters = {
 
 export const decorators = [
   (Story) => (
+    <AppProvider>
     <ThemeProvider theme={useDarkMode() ? darkTheme : lightTheme}>
       <CssBaseline />
       <Story />
     </ThemeProvider>
+    </AppProvider>
   ),
 ];

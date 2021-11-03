@@ -9,6 +9,7 @@ import HomeLogo from '@mui/icons-material/HomeTwoTone';
 
 import { Context as AppContext } from '../../context/AppContext';
 import { useLang } from '../../hooks/useLang';
+import SwitchLang from '../molecules/LanguageSwitchBtn'
 
 type NavLink = {
   label: [string, string];
@@ -29,9 +30,7 @@ export default function Navbar() {
 
   const {
     // @ts-ignore
-    state: { lang },
-    // @ts-ignore
-    toggleLang,
+    state: { lang }
   } = useContext(AppContext);
 
   const index = useLang(lang);
@@ -53,27 +52,6 @@ export default function Navbar() {
     );
   });
 
-  const switchLanguage = (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '2rem',
-        width: '3rem',
-        cursor: 'pointer',
-      }}
-      onClick={() => {
-        toggleLang();
-      }}>
-      <Image
-        src={lang === 'fr' ? '/flags/english.png' : '/flags/french.png'}
-        width={20}
-        height={20}
-        alt={lang === 'fr' ? 'switch to english' : 'passer en français'}
-      />
-    </div>
-  );
 
   return (
     <div
@@ -110,7 +88,7 @@ export default function Navbar() {
             justifyContent: 'center',
             alignItems: 'center',
           }}>
-          {switchLanguage}
+          <SwitchLang />
           {renderLinks}
         </div>
       </Container>

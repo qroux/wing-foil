@@ -4,8 +4,8 @@ import { Container, styled } from '@mui/material';
 const ResponsiveContainer = styled(Container)(({ theme }) => ({
   [theme.breakpoints.up('xs')]: {
     flexDirection: 'column',
-    marginTop: '3rem',
-    marginBottom: '3rem',
+    marginTop: '1rem',
+    marginBottom: '2rem',
   },
   [theme.breakpoints.up('sm')]: {
     flexDirection: 'column',

@@ -20,6 +20,7 @@ import {Context as AppContext} from '../../../src/context/AppContext'
           height: '2rem',
           width: '3rem',
           cursor: 'pointer',
+          marginLeft: '1.5rem'
         }}
         onClick={() => {
           toggleLang();
@@ -40,7 +41,7 @@ import {Context as AppContext} from '../../../src/context/AppContext'
           height={20}
           alt={lang === 'fr' ? 'switch to english' : 'passer en français'}
           style={{
-            transform: 'translate3d(-0.5rem, -0.7rem, 0) scale(0.8)',
+            transform: 'translate3d(-0.65rem, -0.7rem, 0) scale(0.8)',
             zIndex: 4
           }}
         />

@@ -88,8 +88,9 @@ export default function Navbar() {
             justifyContent: 'center',
             alignItems: 'center',
           }}>
-          <SwitchLang />
+          
           {renderLinks}
+          <SwitchLang />
         </div>
       </Container>
     </div>

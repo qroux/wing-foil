@@ -8,8 +8,16 @@ import Navbar from '../src/components/layout/Navbar';
 import Banner from '../src/components/layout/Banner';
 import Footer from '../src/components/layout/Footer';
 
+import { Context as AppContext } from '../src/context/AppContext';
+
 function Layout({ children }: { children: ReactNode }) {
   const LightTheme = theme(false);
+  // @ts-ignore
+  const { toggleLang } = useContext(AppContext);
+
+  useEffect(() => {
+    if (navigator.language.split('-')[0] !== 'fr') toggleLang();
+  }, []);
 
   return (
     <ThemeProvider theme={LightTheme}>

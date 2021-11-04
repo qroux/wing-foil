@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-import { cards } from '../../utils/pricing';
+import { cards } from '../../content/coursContent';
 import PriceCardTag from './PriceCardTag';
 
 export default {
@@ -16,7 +16,7 @@ const card = cards[3];
 
 export const Default = Template.bind({});
 Default.args = {
-  label: card.tag,
+  label: card.tag ? card.tag[0] : '',
   color: card.color,
   outlined: false,
 };

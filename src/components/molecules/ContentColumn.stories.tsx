@@ -1,6 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-import { cards } from '../../utils/pricing';
 import ContentColumn from './ContentColumn';
 
 export default {

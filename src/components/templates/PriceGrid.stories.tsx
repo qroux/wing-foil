@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-import { cards } from '../../utils/pricing';
+import { cards } from '../../content/coursContent';
 import PriceGrid from './PriceGrid';
 
 export default {

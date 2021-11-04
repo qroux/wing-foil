@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-import { cards } from '../../utils/pricing';
-import PriceCard, { Card } from './PriceCard';
+import { cards } from '../../content/coursContent';
+import PriceCard from './PriceCard';
 
 export default {
   title: 'components/molecules/PriceCard',

@@ -27,7 +27,7 @@ export const cards: Card[] = [
     title: ['Carte 3x3h30', 'Practice sessions : 3x3h30'],
     price: 300,
     content: [
-      ['*cours suplémentaire 3h: 100€'],
+      ['Pratique tout niveau', '*cours suplémentaire 3h: 100€'],
       ['Beginner to Advanced practice', '*3h additional session: 100€'],
     ],
   },
@@ -39,7 +39,7 @@ export const cards: Card[] = [
     title: ['Carte 3x3h30', 'Practice sessions : 3x3h30'],
     price: 360,
     content: [
-      ['*cours suplémentaire 3h: 120€'],
+      ['Pratique tout niveau', '*cours suplémentaire 3h: 120€'],
       ['Beginner to Advanced practice', '*3h additional session: 100€'],
     ],
   },

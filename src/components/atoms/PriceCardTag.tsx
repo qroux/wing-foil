@@ -18,12 +18,11 @@ export default function PriceCardTag({
         borderRadius: 5,
         color: outlined ? color : 'white',
         fontWeight: 400,
-        maxWidth: '7rem',
+        maxWidth: '7.5rem',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         padding: '0 0.4rem',
-        // border: outlined ? `1px solid ${color}` : '',
       }}>
       {outlined ? <AccessTimeIcon fontSize='small' /> : null}{' '}
       {label ? label : '-'}

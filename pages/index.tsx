@@ -52,7 +52,7 @@ const Home: NextPage = () => {
 
         <PresContainer>
           <ContentColumn
-            header={index ? 'Wing Foil Discovery' : 'Par où commencer ?'}>
+            header={index ? 'Wing Foil Initiation' : 'Par où commencer ?'}>
             <p>{indexContentSecond[index][0]}</p>
             <ul
               style={{

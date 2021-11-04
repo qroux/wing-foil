@@ -1,9 +1,15 @@
 import React from 'react';
 import PriceCard, { Card } from '../molecules/PriceCard';
 
-export default function PriceGrid({ cards }: { cards: Card[] }) {
+export default function PriceGrid({
+  cards,
+  langIndex,
+}: {
+  cards: Card[];
+  langIndex: number;
+}) {
   const renderCards = cards.map((card, id) => (
-    <PriceCard card={card} key={id} delay={id} />
+    <PriceCard card={card} key={id} delay={id} langIndex={langIndex} />
   ));
 
   return (

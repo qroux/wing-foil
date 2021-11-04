@@ -1,33 +1,33 @@
-import { useTheme } from '@mui/material';
-import { motion } from 'framer-motion';
 import React from 'react';
+import { motion } from 'framer-motion';
 import Divider from '../atoms/Divider';
 import PriceCardTag from '../atoms/PriceCardTag';
 
 export interface Card {
   photo: string;
-  tag?: string;
+  tag?: string[];
   color?: string;
   duration: string;
-  title: string;
+  title: string[];
   price: number;
-  content: string[];
+  content: string[][];
 }
 
 export default function PriceCard({
   card,
   delay,
+  langIndex = 0,
 }: {
   card: Card;
   delay: number;
+  langIndex: number;
 }) {
-  const theme = useTheme();
   const { title, price, content, tag, color, duration, photo } = card;
 
-  const renderContent = content.map((line, id) => (
+  const renderContent = content[langIndex].map((line, id) => (
     <div
       style={{
-        textTransform: 'capitalize',
+        textTransform: 'lowercase',
       }}
       key={id}>
       {line}
@@ -71,7 +71,10 @@ export default function PriceCard({
             display: 'flex',
             justifyContent: 'space-between',
           }}>
-          <PriceCardTag label={tag} color={color} />
+          <PriceCardTag
+            label={tag ? tag[langIndex] : undefined}
+            color={color}
+          />
           <PriceCardTag label={duration} color={color} outlined={true} />
         </div>
 
@@ -86,7 +89,7 @@ export default function PriceCard({
               style={{
                 textTransform: 'capitalize',
               }}>
-              {title}
+              {title[langIndex]}
             </h3>
           </div>
         </div>
@@ -96,7 +99,7 @@ export default function PriceCard({
         <div
           className='card__content'
           style={{
-            minHeight: '4rem',
+            minHeight: '4.5rem',
           }}>
           {renderContent}
         </div>

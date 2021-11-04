@@ -11,7 +11,10 @@ import ContentColumn from '../src/components/molecules/ContentColumn';
 import ImageColumn from '../src/components/molecules/ImageColumn';
 import CallToAction from '../src/components/atoms/CallToAction';
 import { useLang } from '../src/hooks/useLang';
-import { indexContentFirst } from '../src/content/indexContent';
+import {
+  indexContentFirst,
+  indexContentSecond,
+} from '../src/content/indexContent';
 
 const Home: NextPage = () => {
   const {
@@ -41,38 +44,27 @@ const Home: NextPage = () => {
       <main>
         <PresContainer>
           <ContentColumn
-            header={
-              index ? 'Wing Foil discovery' : "Qu'est ce que le Wing Foil ?"
-            }>
+            header={index ? 'About Wing Foil' : "Qu'est ce que le Wing Foil ?"}>
             {renderContent(indexContentFirst)}
           </ContentColumn>
           <ImageColumn imagePath={'/sylvain-min-gimp.webp'} />
         </PresContainer>
 
         <PresContainer>
-          <ContentColumn header={'Par où commencer ?'}>
-            <p>L’initiation se déroule en trois étapes :</p>
+          <ContentColumn
+            header={index ? 'Wing Foil Discovery' : 'Par où commencer ?'}>
+            <p>{indexContentSecond[index][0]}</p>
             <ul
               style={{
                 listStyleType: 'square',
               }}>
-              <li>Maniement de l’aile à terre.</li>
-              <li>
-                Navigation sur une planche de paddle ou planche à voile sans
-                foil.
-              </li>
-              <li>
-                Navigation avec la planche de Wingfoil et premiers décollages !
-              </li>
+              <li>{indexContentSecond[index][1]}</li>
+              <li>{indexContentSecond[index][2]}</li>
+              <li>{indexContentSecond[index][3]}</li>
             </ul>
-            <p>
-              Une session de foil tracté par un bateau pourra être proposé aux
-              initiations d’une heure et les jours sans vent.
-            </p>
+            <p>{indexContentSecond[index][4]}</p>
 
-            <p style={{ fontWeight: 'bold' }}>
-              * Matériel adapté à tous les niveaux et tous les gabarits
-            </p>
+            <p style={{ fontWeight: 'bold' }}>{indexContentSecond[index][5]}</p>
 
             <CallToAction label={index ? 'Try Out' : 'Découvrir'} />
           </ContentColumn>

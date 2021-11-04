@@ -11,4 +11,21 @@ export const indexContentFirst = [
   ],
 ];
 
-export const indexContentSecond = [[], []];
+export const indexContentSecond = [
+  [
+    'L’initiation se déroule en trois étapes :',
+    'Maniement de l’aile à terre',
+    'Navigation sur une planche de paddle ou planche à voile sans foil',
+    'Navigation avec la planche de Wingfoil et premiers décollages !',
+    'Une session de foil tracté par un bateau pourra être proposé aux initiations d’une heure et les jours sans vent.',
+    '* Matériel adapté à tous les niveaux et tous les gabarits',
+  ],
+  [
+    'Initiation session follows three main steps :',
+    'Wing handling ashore',
+    'Paddle navigation to train your balance',
+    'First navigation with  both the wing and the foil board',
+    'Alternatively, towed foil can be done in place of initiation session because of insufficient wind condition',
+    '* Equipment suitable for all levels and all sizes',
+  ],
+];

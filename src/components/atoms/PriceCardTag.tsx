@@ -10,7 +10,6 @@ export default function PriceCardTag({
   color?: string;
   outlined?: boolean;
 }) {
-  console.log(color);
   return (
     <div
       className='tag'

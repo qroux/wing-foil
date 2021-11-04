@@ -2,7 +2,7 @@ import React from 'react';
 
 const items = [
   { label: 'Contact' },
-  { label: 'CGV' },
+  // { label: 'CGV' },
   { label: 'Mentions légales' },
 ];
 
@@ -21,7 +21,13 @@ export default function Footer() {
         alignItems: 'center',
         color: 'white',
       }}>
-      <div className='items'>{renderItems}</div>
+      <div
+        className='items'
+        style={{
+          textAlign: 'center',
+        }}>
+        {renderItems}
+      </div>
     </div>
   );
 }

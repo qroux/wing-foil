@@ -36,6 +36,14 @@ export default function PriceCard({
 
   return (
     <motion.div
+      onClick={() => {
+        if (document) {
+          //@ts-ignore
+          document
+            .getElementById('reservation')
+            .scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }}
       className='card__container'
       style={{
         boxShadow:
@@ -47,6 +55,7 @@ export default function PriceCard({
         minHeight: '15rem',
         position: 'relative',
         overflow: 'hidden',
+        cursor: 'pointer',
       }}
       initial={{
         translateY: '-1rem',

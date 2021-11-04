@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import AnimatedPage from './_animatedPage';
-import { Button, Container, IconButton } from '@mui/material';
+import { Button, Container } from '@mui/material';
 import PriceGrid from '../src/components/templates/PriceGrid';
 
 import { cards } from '../src/content/coursContent';
@@ -49,6 +49,7 @@ export default function Cours() {
         </div>
       </Container>
       <Container
+        id='reservation'
         maxWidth='lg'
         style={{
           marginBottom: '10rem',

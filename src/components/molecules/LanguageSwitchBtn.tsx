@@ -11,6 +11,7 @@ const LanguageSwitchBtn = () => {
 
   return (
     <div
+      data-cypress='langSwitch'
       style={{
         display: 'flex',
         justifyContent: 'center',

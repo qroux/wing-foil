@@ -35,11 +35,11 @@ const LanguageSwitchBtn = () => {
       />
       <img
         src={lang === 'fr' ? '/flags/english.png' : '/flags/french.png'}
-        width={20}
-        height={20}
+        width={17}
+        height={17}
         alt={lang === 'fr' ? 'switch to english' : 'passer en français'}
         style={{
-          transform: 'translate3d(-0.65rem, -0.7rem, 0) scale(0.8)',
+          transform: 'translate3d(-0.65rem, -0.7rem, 0)',
           zIndex: 9,
         }}
       />

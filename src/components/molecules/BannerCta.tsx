@@ -15,6 +15,7 @@ export default function BannerCta() {
   } = useContext(AppContext);
 
   const langIndex = useLang(lang);
+  const label = langIndex ? 'Book a session' : 'Réserver une séance';
 
   const renderCTA =
     pathname === '/cours' ? (
@@ -27,7 +28,7 @@ export default function BannerCta() {
           fontWeight: 'bold',
           color: 'white',
         }}>
-        {langIndex ? 'Book a session' : 'Réserver une séance'}
+        {label}
       </Button>
     ) : (
       <Link
@@ -45,7 +46,7 @@ export default function BannerCta() {
             fontWeight: 'bold',
             color: 'white',
           }}>
-          {langIndex ? 'Book a session' : 'Réserver'}
+          {label}
         </Button>
       </Link>
     );

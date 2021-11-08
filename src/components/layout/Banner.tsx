@@ -1,46 +1,15 @@
-import { Button, useTheme } from '@mui/material';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import React from 'react';
-import { scrollToId } from '../../utils/scrollToId';
+import { useTheme } from '@mui/material';
+import React, { useContext } from 'react';
+import { Context as AppContext } from '../../context/AppContext';
+import BannerCta from '../molecules/BannerCta';
 
 export default function Banner() {
   const theme = useTheme();
-  const { pathname } = useRouter();
 
-  const renderCTA =
-    pathname === '/cours' ? (
-      <Button
-        variant='contained'
-        color='primary'
-        onClick={() => scrollToId('reservation')}
-        style={{
-          marginTop: '1rem',
-          fontWeight: 'bold',
-          color: 'white',
-        }}>
-        Réserver
-      </Button>
-    ) : (
-      <Link
-        href={{
-          pathname: '/cours',
-          hash: 'reservation',
-          query: { scrollTo: true },
-        }}
-        passHref>
-        <Button
-          variant='contained'
-          color='primary'
-          style={{
-            marginTop: '1rem',
-            fontWeight: 'bold',
-            color: 'white',
-          }}>
-          Réserver
-        </Button>
-      </Link>
-    );
+  const {
+    // @ts-ignore
+    state: { lang },
+  } = useContext(AppContext);
 
   return (
     <div
@@ -89,7 +58,7 @@ export default function Banner() {
             }}>
             Cassis | La Ciotat
           </h2>
-          {renderCTA}
+          <BannerCta />
 
           {/* <a href="tel:+33442018001">
           <h3

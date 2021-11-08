@@ -2,24 +2,18 @@ import { Button, useTheme } from '@mui/material';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
+import { scrollToId } from '../../hooks/useScrollId';
 
 export default function Banner() {
   const theme = useTheme();
   const { pathname } = useRouter();
-
-  const scrollToId = () => {
-    //@ts-ignore
-    document
-      .getElementById('reservation')
-      .scrollIntoView({ behavior: 'smooth', block: 'center' });
-  };
 
   const renderCTA =
     pathname === '/cours' ? (
       <Button
         variant='contained'
         color='primary'
-        onClick={scrollToId}
+        onClick={() => scrollToId('reservation')}
         style={{
           marginTop: '1rem',
           fontWeight: 'bold',

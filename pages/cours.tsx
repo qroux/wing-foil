@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import AnimatedPage from './_animatedPage';
 import { Button, Container } from '@mui/material';
 import PriceGrid from '../src/components/templates/PriceGrid';
@@ -8,6 +8,7 @@ import { Context as AppContext } from '../src/context/AppContext';
 import { useLang } from '../src/hooks/useLang';
 import { lightPalette } from '../styles/theme/theme';
 import { LocalPhone } from '@mui/icons-material';
+import { useQueryParams } from '../src/hooks/useQueryParams';
 
 export default function Cours() {
   const {
@@ -16,6 +17,16 @@ export default function Cours() {
   } = useContext(AppContext);
 
   const langIndex = useLang(lang);
+
+  useEffect(() => {
+    const { scrollTo } = useQueryParams(window.location.search);
+    if (scrollTo) {
+      //@ts-ignore
+      document
+        .getElementById('reservation')
+        .scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }, []);
 
   return (
     <AnimatedPage>

@@ -1,8 +1,52 @@
-import { useTheme } from '@mui/material';
+import { Button, useTheme } from '@mui/material';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React from 'react';
 
 export default function Banner() {
   const theme = useTheme();
+  const { pathname } = useRouter();
+
+  const scrollToId = () => {
+    //@ts-ignore
+    document
+      .getElementById('reservation')
+      .scrollIntoView({ behavior: 'smooth', block: 'center' });
+  };
+
+  const renderCTA =
+    pathname === '/cours' ? (
+      <Button
+        variant='contained'
+        color='primary'
+        onClick={scrollToId}
+        style={{
+          marginTop: '1rem',
+          fontWeight: 'bold',
+          color: 'white',
+        }}>
+        Réserver
+      </Button>
+    ) : (
+      <Link
+        href={{
+          pathname: '/cours',
+          hash: 'reservation',
+          query: { scrollTo: true },
+        }}
+        passHref>
+        <Button
+          variant='contained'
+          color='primary'
+          style={{
+            marginTop: '1rem',
+            fontWeight: 'bold',
+            color: 'white',
+          }}>
+          Réserver
+        </Button>
+      </Link>
+    );
 
   return (
     <div
@@ -51,7 +95,9 @@ export default function Banner() {
             }}>
             Cassis | La Ciotat
           </h2>
-          <a href="tel:+33442018001">
+          {renderCTA}
+
+          {/* <a href="tel:+33442018001">
           <h3
             style={{
               margin: 0,
@@ -64,7 +110,7 @@ export default function Banner() {
             }}>
             +33 4 42 01 80 01
           </h3>
-          </a>
+          </a> */}
         </div>
       </div>
     </div>

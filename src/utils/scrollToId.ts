@@ -1,4 +1,4 @@
-export const useScrollToId = (id: string) => {
+export const scrollToId = (id: string) => {
   //@ts-ignore
   document
     .getElementById(id)

@@ -8,7 +8,7 @@ import { Context as AppContext } from '../src/context/AppContext';
 import { useLang } from '../src/hooks/useLang';
 import { lightPalette } from '../styles/theme/theme';
 import { LocalPhone } from '@mui/icons-material';
-import { useQueryParams } from '../src/hooks/useQueryParams';
+import { getQueryParams } from '../src/utils/getQueryParams';
 
 export default function Cours() {
   const {
@@ -19,7 +19,8 @@ export default function Cours() {
   const langIndex = useLang(lang);
 
   useEffect(() => {
-    const { scrollTo } = useQueryParams(window.location.search);
+    const { scrollTo } = getQueryParams(window.location.search);
+
     if (scrollTo) {
       //@ts-ignore
       document
@@ -30,7 +31,7 @@ export default function Cours() {
 
   return (
     <AnimatedPage>
-      <Container maxWidth='lg' style={{}}>
+      <Container maxWidth='lg'>
         <h1>{langIndex ? 'Initiation | Practice' : 'Initiation | Pratique'}</h1>
         <div
           style={{

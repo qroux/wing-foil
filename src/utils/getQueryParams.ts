@@ -1,4 +1,4 @@
-export const useQueryParams = (query: string) => {
+export const getQueryParams = (query: string) => {
   return query
     ? (/^[?#]/.test(query) ? query.slice(1) : query)
         .split('&')

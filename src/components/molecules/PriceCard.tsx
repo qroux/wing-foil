@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Divider from '../atoms/Divider';
 import PriceCardTag from '../atoms/PriceCardTag';
-import { useScrollToId } from '../../hooks/useScrollToId';
+import { scrollToId } from '../../utils/scrollToId';
 
 export interface Card {
   photo: string;
@@ -38,7 +38,7 @@ export default function PriceCard({
   return (
     <motion.div
       onClick={() => {
-        useScrollToId('reservation');
+        scrollToId('reservation');
       }}
       className='card__container'
       style={{

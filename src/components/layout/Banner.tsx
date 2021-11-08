@@ -2,7 +2,7 @@ import { Button, useTheme } from '@mui/material';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
-import { scrollToId } from '../../hooks/useScrollId';
+import { useScrollToId } from '../../hooks/useScrollToId';
 
 export default function Banner() {
   const theme = useTheme();
@@ -13,7 +13,7 @@ export default function Banner() {
       <Button
         variant='contained'
         color='primary'
-        onClick={() => scrollToId('reservation')}
+        onClick={() => useScrollToId('reservation')}
         style={{
           marginTop: '1rem',
           fontWeight: 'bold',

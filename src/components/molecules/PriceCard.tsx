@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Divider from '../atoms/Divider';
 import PriceCardTag from '../atoms/PriceCardTag';
+import { useScrollToId } from '../../hooks/useScrollToId';
 
 export interface Card {
   photo: string;
@@ -37,12 +38,7 @@ export default function PriceCard({
   return (
     <motion.div
       onClick={() => {
-        if (document) {
-          //@ts-ignore
-          document
-            .getElementById('reservation')
-            .scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
+        useScrollToId('reservation');
       }}
       className='card__container'
       style={{

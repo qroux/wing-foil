@@ -30,7 +30,7 @@ const LanguageSwitchBtn = () => {
         height={25}
         alt={lang !== 'fr' ? 'switch to english' : 'passer en français'}
         style={{
-          zIndex: 5,
+          zIndex: 10,
         }}
       />
       <img
@@ -40,7 +40,7 @@ const LanguageSwitchBtn = () => {
         alt={lang === 'fr' ? 'switch to english' : 'passer en français'}
         style={{
           transform: 'translate3d(-0.65rem, -0.7rem, 0) scale(0.8)',
-          zIndex: 4,
+          zIndex: 9,
         }}
       />
     </div>

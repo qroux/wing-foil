@@ -22,7 +22,7 @@ export default function Cours() {
   useEffect(() => {
     const { scrollTo } = getQueryParams(window.location.search);
 
-    if (scrollTo === 'true') setTimeout(() => scrollToId('reservation'), 1000);
+    if (scrollTo === 'true') setTimeout(() => scrollToId('reservation'), 300);
   }, []);
 
   return (

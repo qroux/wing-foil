@@ -39,8 +39,8 @@ const LanguageSwitchBtn = () => {
         height={17}
         alt={lang === 'fr' ? 'switch to english' : 'passer en français'}
         style={{
-          transform: 'translate3d(-0.65rem, -0.7rem, 0)',
-          zIndex: 11,
+          transform: 'translate3d(-0.15rem, -0.7rem, 0)',
+          zIndex: 9,
         }}
       />
     </div>

@@ -60,6 +60,7 @@ export default function Navbar() {
         top: 0,
         left: 0,
         width: '100%',
+        overflow: 'visible',
       }}>
       <Container
         disableGutters={false}

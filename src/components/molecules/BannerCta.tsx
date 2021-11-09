@@ -34,7 +34,6 @@ export default function BannerCta() {
       <Link
         href={{
           pathname: '/cours',
-          hash: 'reservation',
           query: { scrollTo: true },
         }}
         passHref>

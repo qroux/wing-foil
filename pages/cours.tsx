@@ -9,6 +9,7 @@ import { useLang } from '../src/hooks/useLang';
 import { lightPalette } from '../styles/theme/theme';
 import { LocalPhone } from '@mui/icons-material';
 import { getQueryParams } from '../src/utils/getQueryParams';
+import { scrollToId } from '../src/utils/scrollToId';
 
 export default function Cours() {
   const {
@@ -21,12 +22,7 @@ export default function Cours() {
   useEffect(() => {
     const { scrollTo } = getQueryParams(window.location.search);
 
-    if (scrollTo) {
-      //@ts-ignore
-      document
-        .getElementById('reservation')
-        .scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
+    if (scrollTo === 'true') setTimeout(() => scrollToId('reservation'), 1000);
   }, []);
 
   return (

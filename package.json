@@ -21,6 +21,7 @@
     "framer-motion": "^4.1.17",
     "next": "11.1.2",
     "react": "17.0.2",
+    "react-cookie-consent": "^6.4.1",
     "react-dom": "17.0.2",
     "remove": "^0.1.5"
   },

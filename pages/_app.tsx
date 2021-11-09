@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 
 import type { AppProps } from 'next/app';
 import Layout from './_layout';
@@ -6,9 +6,22 @@ import { AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/router';
 
 import { Provider as AppProvider } from '../src/context/AppContext';
+import CookieConsent from 'react-cookie-consent';
+
+import * as gtag from '../lib/gtag';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
+
+  useEffect(() => {
+    const handleRouteChange = (url: string) => {
+      gtag.pageview(url);
+    };
+    router.events.on('routeChangeComplete', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
 
   return (
     <AppProvider>
@@ -21,6 +34,25 @@ function MyApp({ Component, pageProps }: AppProps) {
           />
         </AnimatePresence>
       </Layout>
+      <CookieConsent
+        cookieName='TRACKER_CONSENT'
+        enableDeclineButton
+        location='bottom'
+        buttonText='I Agree'
+        buttonStyle={{
+          backgroundColor: 'green',
+          color: 'white',
+        }}
+        declineButtonText='I Refuse Being Tracked'
+        declineButtonStyle={{
+          backgroundColor: 'red',
+        }}
+        onAccept={() => gtag.consentGranted()}
+        // onDecline={() => console.log('non merci')}
+        style={{ background: '#2B373B' }}
+        expires={150}>
+        This website uses cookies for no particular reason
+      </CookieConsent>
     </AppProvider>
   );
 }

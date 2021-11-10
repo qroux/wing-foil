@@ -6,9 +6,8 @@ import Navbar from '../src/components/layout/Navbar';
 import Banner from '../src/components/layout/Banner';
 import Footer from '../src/components/layout/Footer';
 
-import * as gtag from '../lib/gtag';
 import { Context as AppContext } from '../src/context/AppContext';
-import CookieConsent from 'react-cookie-consent';
+import ConsentModal from '../src/components/molecules/ConsentModal';
 
 function Layout({ children }: { children: ReactNode }) {
   const LightTheme = theme(false);
@@ -32,27 +31,9 @@ function Layout({ children }: { children: ReactNode }) {
           minHeight: '100.1vh',
         }}>
         <Navbar />
-        <Banner />
-        {children}
+        <Banner />s{children}
         <Footer />
-        <CookieConsent
-          cookieName='TRACKER_CONSENT'
-          enableDeclineButton
-          location='bottom'
-          buttonText='I Agree'
-          buttonStyle={{
-            backgroundColor: 'green',
-            color: 'white',
-          }}
-          declineButtonText='I Refuse Being Tracked'
-          declineButtonStyle={{
-            backgroundColor: 'red',
-          }}
-          onAccept={() => gtag.consentGranted()}
-          style={{ background: '#2B373B' }}
-          expires={150}>
-          This website uses cookies for no particular reason
-        </CookieConsent>
+        <ConsentModal lang={lang} />
       </div>
     </ThemeProvider>
   );

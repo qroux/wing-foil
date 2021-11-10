@@ -9,6 +9,8 @@ import { Provider as AppProvider } from '../src/context/AppContext';
 import CookieConsent from 'react-cookie-consent';
 
 import * as gtag from '../lib/gtag';
+// import { useLang } from '../src/hooks/useLang';
+// import { Context as AppContext } from '../src/context/AppContext';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -34,25 +36,6 @@ function MyApp({ Component, pageProps }: AppProps) {
           />
         </AnimatePresence>
       </Layout>
-      <CookieConsent
-        cookieName='TRACKER_CONSENT'
-        enableDeclineButton
-        location='bottom'
-        buttonText='I Agree'
-        buttonStyle={{
-          backgroundColor: 'green',
-          color: 'white',
-        }}
-        declineButtonText='I Refuse Being Tracked'
-        declineButtonStyle={{
-          backgroundColor: 'red',
-        }}
-        onAccept={() => gtag.consentGranted()}
-        // onDecline={() => console.log('non merci')}
-        style={{ background: '#2B373B' }}
-        expires={150}>
-        This website uses cookies for no particular reason
-      </CookieConsent>
     </AppProvider>
   );
 }

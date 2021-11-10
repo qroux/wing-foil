@@ -6,11 +6,7 @@ import { AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/router';
 
 import { Provider as AppProvider } from '../src/context/AppContext';
-import CookieConsent from 'react-cookie-consent';
-
 import * as gtag from '../lib/gtag';
-// import { useLang } from '../src/hooks/useLang';
-// import { Context as AppContext } from '../src/context/AppContext';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();

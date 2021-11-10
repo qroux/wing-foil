@@ -31,7 +31,8 @@ function Layout({ children }: { children: ReactNode }) {
           minHeight: '100.1vh',
         }}>
         <Navbar />
-        <Banner />s{children}
+        <Banner />
+        {children}
         <Footer />
         <ConsentModal lang={lang} />
       </div>

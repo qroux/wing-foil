@@ -5,9 +5,19 @@ describe('wing-foil navigation', () => {
     cy.visit('http://localhost:3000');
   });
 
-  it('Navbar link navigates to /cours page on click', () => {
+  it('Banner CTA link navigates to /cours page on click + scroll animation', () => {
+    const navButtons = cy.get('[href="/cours?scrollTo=true"]');
+    navButtons.should('have.length', 1);
+    navButtons.first().click();
+
+    cy.location().should((loc) => {
+      expect(loc.href).to.eq('http://localhost:3000/cours?scrollTo=true');
+    });
+  });
+
+  it('Bottom CTA navigates to /cours page on click', () => {
     const navButtons = cy.get('[href="/cours"]');
-    navButtons.should('have.length', 2);
+    navButtons.should('have.length', 1);
     navButtons.first().click();
 
     cy.location().should((loc) => {
@@ -15,23 +25,13 @@ describe('wing-foil navigation', () => {
     });
   });
 
-  it('CTA navigates to /cours page on click', () => {
-    const navButtons = cy.get('[href="/cours"]');
-    navButtons.should('have.length', 2);
-    navButtons.last().click();
-
-    cy.location().should((loc) => {
-      expect(loc.href).to.eq('http://localhost:3000/cours');
-    });
-  });
-
-  it('Fetch browser lang to dipslay fr or english content ', () => {
+  it('Fetch browser lang to dipslay french or english content ', () => {
     const lang = window.navigator.language.split('-')[0];
-    const navButton = cy.get('[href="/cours"]').first();
+    const navButton = cy.get('[href="/cours?scrollTo=true"]').first();
 
     lang === 'fr'
-      ? navButton.should('have.text', 'Cours')
-      : navButton.should('have.text', 'Session');
+      ? navButton.should('have.text', 'Réserver une séance')
+      : navButton.should('have.text', 'Book a session');
   });
 
   it('Toggle lang on click', () => {

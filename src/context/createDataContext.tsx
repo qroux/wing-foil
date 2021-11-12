@@ -1,18 +1,18 @@
 import { initial } from 'cypress/types/lodash';
 import React, { createContext, ReactNode, useReducer } from 'react';
 
-interface CreateContext {
-  reducer: any;
-  actions: any;
-  initialState: AppStates;
+interface AppStates {
+  [key: string]: any;
 }
 
 interface Actions {
   [key: string]: () => void;
 }
 
-interface AppStates {
-  [key: string]: any;
+interface CreateContext {
+  reducer: any;
+  actions: any;
+  initialState: AppStates;
 }
 
 type AppContext = {

@@ -10,7 +10,6 @@ export default function BannerCta() {
   const { pathname } = useRouter();
 
   const {
-    // @ts-ignore
     state: { lang },
   } = useContext(AppContext);
 

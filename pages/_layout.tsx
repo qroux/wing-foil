@@ -13,10 +13,8 @@ function Layout({ children }: { children: ReactNode }) {
   const LightTheme = theme(false);
 
   const {
-    // @ts-ignore
     state: { lang },
-    // @ts-ignore
-    toggleLang,
+    actions: { toggleLang },
   } = useContext(AppContext);
 
   useEffect(() => {

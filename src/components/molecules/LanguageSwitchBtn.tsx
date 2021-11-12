@@ -3,10 +3,8 @@ import { Context as AppContext } from '../../../src/context/AppContext';
 
 const LanguageSwitchBtn = () => {
   const {
-    // @ts-ignore
     state: { lang },
-    // @ts-ignore
-    toggleLang,
+    actions: { toggleLang },
   } = useContext(AppContext);
 
   return (

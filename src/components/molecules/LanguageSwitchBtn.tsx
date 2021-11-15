@@ -1,12 +1,12 @@
-import React, { useContext } from 'react';
-import { Context as AppContext } from '../../../src/context/AppContext';
+import React from 'react';
 
-const LanguageSwitchBtn = () => {
-  const {
-    state: { lang },
-    actions: { toggleLang },
-  } = useContext(AppContext);
-
+const LanguageSwitchBtn = ({
+  lang,
+  onClick,
+}: {
+  lang: string;
+  onClick: () => void;
+}) => {
   return (
     <div
       data-cypress='langSwitch'
@@ -19,9 +19,7 @@ const LanguageSwitchBtn = () => {
         cursor: 'pointer',
         marginLeft: '1.5rem',
       }}
-      onClick={() => {
-        toggleLang();
-      }}>
+      onClick={onClick}>
       <img
         src={lang !== 'fr' ? '/flags/english.png' : '/flags/french.png'}
         width={25}

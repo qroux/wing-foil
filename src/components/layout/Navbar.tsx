@@ -23,9 +23,10 @@ export const NavHeight = '4rem';
 export default function Navbar() {
   const theme = useTheme();
 
-  // const {
-  //   state: { lang },
-  // } = useContext(AppContext);
+  const {
+    state: { lang },
+    actions: { toggleLang },
+  } = useContext(AppContext);
 
   // const index = langIndex(lang);
 
@@ -83,7 +84,7 @@ export default function Navbar() {
             alignItems: 'center',
           }}>
           {/* {renderLinks} */}
-          <SwitchLang />
+          <SwitchLang lang={lang} onClick={toggleLang} />
         </div>
       </Container>
     </div>

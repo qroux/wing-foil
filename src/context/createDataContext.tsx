@@ -1,4 +1,3 @@
-import { initial } from 'cypress/types/lodash';
 import React, { createContext, ReactNode, useReducer } from 'react';
 
 interface AppStates {

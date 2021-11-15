@@ -1,7 +1,7 @@
 import React from 'react';
 import CookieConsent from 'react-cookie-consent';
 import * as gtag from '../../../lib/gtag';
-import { useLang } from '../../hooks/useLang';
+import { langIndex } from '../../utils/langIndex';
 
 const text = {
   description: {
@@ -25,19 +25,19 @@ const btnStyle = {
 };
 
 export default function ConsentModal({ lang }: { lang: string }) {
-  const langIndex = useLang(lang);
+  const index = langIndex(lang);
 
   return (
     <CookieConsent
       cookieName='TRACKER_CONSENT'
       enableDeclineButton
       location='bottom'
-      buttonText={text.acceptBtn.content[langIndex]}
+      buttonText={text.acceptBtn.content[index]}
       buttonStyle={{
         ...btnStyle,
         backgroundColor: '#91C263',
       }}
-      declineButtonText={text.declineBtn.content[langIndex]}
+      declineButtonText={text.declineBtn.content[index]}
       declineButtonStyle={{
         ...btnStyle,
         backgroundColor: 'transparent',
@@ -45,7 +45,7 @@ export default function ConsentModal({ lang }: { lang: string }) {
       onAccept={() => gtag.consentGranted()}
       style={{ background: '#2B373B' }}
       expires={150}>
-      {text.description.content[langIndex]}
+      {text.description.content[index]}
     </CookieConsent>
   );
 }

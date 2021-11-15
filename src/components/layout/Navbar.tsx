@@ -1,14 +1,9 @@
 import React, { useContext } from 'react';
-import NavbarLink from '../atoms/NavbarLink';
 import { Button, Container, useTheme, styled } from '@mui/material';
 import Link from 'next/link';
-import Image from 'next/image';
-// import logo from '../../../public/surf.png';
-import { motion } from 'framer-motion';
 import HomeLogo from '@mui/icons-material/HomeTwoTone';
 
 import { Context as AppContext } from '../../context/AppContext';
-import { useLang } from '../../hooks/useLang';
 import SwitchLang from '../molecules/LanguageSwitchBtn';
 
 type NavLink = {
@@ -29,28 +24,27 @@ export default function Navbar() {
   const theme = useTheme();
 
   const {
-    // @ts-ignore
     state: { lang },
   } = useContext(AppContext);
 
-  const index = useLang(lang);
+  // const index = langIndex(lang);
 
-  const renderLinks = links.map((link, id) => {
-    return (
-      <Link href={link.path} key={id} passHref>
-        <Button
-          color={link.accent ? 'error' : 'inherit'}
-          variant={link.accent ? 'contained' : 'text'}
-          style={{
-            marginLeft: '1rem',
-            fontWeight: 700,
-            width: '6rem',
-          }}>
-          {link.label[index]}
-        </Button>
-      </Link>
-    );
-  });
+  // const renderLinks = links.map((link, id) => {
+  //   return (
+  //     <Link href={link.path} key={id} passHref>
+  //       <Button
+  //         color={link.accent ? 'error' : 'inherit'}
+  //         variant={link.accent ? 'contained' : 'text'}
+  //         style={{
+  //           marginLeft: '1rem',
+  //           fontWeight: 700,
+  //           width: '6rem',
+  //         }}>
+  //         {link.label[index]}
+  //       </Button>
+  //     </Link>
+  //   );
+  // });
 
   return (
     <div

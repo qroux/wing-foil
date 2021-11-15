@@ -5,19 +5,18 @@ import PriceGrid from '../src/components/templates/PriceGrid';
 
 import { cards } from '../src/content/coursContent';
 import { Context as AppContext } from '../src/context/AppContext';
-import { useLang } from '../src/hooks/useLang';
 import { lightPalette } from '../styles/theme/theme';
 import { LocalPhone } from '@mui/icons-material';
 import { getQueryParams } from '../src/utils/getQueryParams';
 import { scrollToId } from '../src/utils/scrollToId';
+import { langIndex } from '../src/utils/langIndex';
 
 export default function Cours() {
   const {
-    // @ts-ignore
     state: { lang },
   } = useContext(AppContext);
 
-  const langIndex = useLang(lang);
+  const index = langIndex(lang);
 
   useEffect(() => {
     const { scrollTo } = getQueryParams(window.location.search);
@@ -28,7 +27,7 @@ export default function Cours() {
   return (
     <AnimatedPage>
       <Container maxWidth='lg'>
-        <h1>{langIndex ? 'Initiation | Practice' : 'Initiation | Pratique'}</h1>
+        <h1>{index ? 'Initiation | Practice' : 'Initiation | Pratique'}</h1>
         <div
           style={{
             marginBottom: '2rem',
@@ -37,7 +36,7 @@ export default function Cours() {
             style={{
               color: lightPalette.secondary.main,
             }}>
-            {langIndex
+            {index
               ? 'High season : July-August'
               : 'Haute saison : Juillet-Août'}
           </span>
@@ -46,14 +45,14 @@ export default function Cours() {
             style={{
               color: lightPalette.primary.main,
             }}>
-            {langIndex
+            {index
               ? 'Low season : April-June | September-October'
               : 'Basse Saison: Avril-Juin | Septembre-Octobre'}
           </span>
         </div>
 
         <div style={{ marginBottom: '5rem' }}>
-          <PriceGrid cards={cards} langIndex={langIndex} />
+          <PriceGrid cards={cards} langIndex={index} />
         </div>
       </Container>
       <Container
@@ -62,9 +61,9 @@ export default function Cours() {
         style={{
           marginBottom: '10rem',
         }}>
-        <h1>{langIndex ? 'Reservation' : 'Reservation'}</h1>
+        <h1>{index ? 'Reservation' : 'Reservation'}</h1>
         <div>
-          {langIndex
+          {index
             ? 'You can book by phone at this number :'
             : 'Les réservations se font par téléphone au numéro :'}
         </div>

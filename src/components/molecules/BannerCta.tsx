@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useContext } from 'react';
 import { Context as AppContext } from '../../context/AppContext';
-import { useLang } from '../../hooks/useLang';
+import { langIndex } from '../../utils/langIndex';
 import { scrollToId } from '../../utils/scrollToId';
 
 export default function BannerCta() {
@@ -13,8 +13,7 @@ export default function BannerCta() {
     state: { lang },
   } = useContext(AppContext);
 
-  const langIndex = useLang(lang);
-  const label = langIndex ? 'Book a session' : 'Réserver une séance';
+  const label = langIndex(lang) ? 'Book a session' : 'Réserver une séance';
 
   const renderCTA =
     pathname === '/cours' ? (

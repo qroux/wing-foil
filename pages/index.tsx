@@ -10,19 +10,18 @@ import PresContainer from '../src/components/templates/PresContainer';
 import ContentColumn from '../src/components/molecules/ContentColumn';
 import ImageColumn from '../src/components/molecules/ImageColumn';
 import CallToAction from '../src/components/atoms/CallToAction';
-import { useLang } from '../src/hooks/useLang';
 import {
   indexContentFirst,
   indexContentSecond,
 } from '../src/content/indexContent';
+import { langIndex } from '../src/utils/langIndex';
 
 const Home: NextPage = () => {
   const {
-    // @ts-ignore
     state: { lang },
   } = useContext(AppContext);
 
-  const index = useLang(lang);
+  const index = langIndex(lang);
 
   const renderContent = (content: string[][]) => {
     return content[index].map((line: string, id: number) => {

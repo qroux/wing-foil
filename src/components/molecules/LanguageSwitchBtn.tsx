@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { Context as AppContext } from '../../../src/context/AppContext';
 
 const LanguageSwitchBtn = () => {

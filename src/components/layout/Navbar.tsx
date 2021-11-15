@@ -23,9 +23,9 @@ export const NavHeight = '4rem';
 export default function Navbar() {
   const theme = useTheme();
 
-  const {
-    state: { lang },
-  } = useContext(AppContext);
+  // const {
+  //   state: { lang },
+  // } = useContext(AppContext);
 
   // const index = langIndex(lang);
 
